@@ -44,6 +44,7 @@ export default {
 }
 </script>
 <style scoped>
+#leftContent{float:left;}
 .topContent{background-color:rgba(79, 159, 222, 1); overflow:hidden; position: relative;}
 .topContent .logo{color:#fff; font-size:24px; padding:24px; padding-right:auto; float:left}
 .topContent .navul{color:#fff; position: absolute; bottom:-5px; left:280px}
