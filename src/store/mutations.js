@@ -4,17 +4,22 @@ import {
 	HIDE_LOADING,
 	SHOW_LOADING,
 	FOOTER_HIDE,
-	FOOTER_SHOW
+	FOOTER_SHOW,
+	SUBLIBTN
 } from './type'
 
 const state={
-	headShow:true,
+	subsnump:0,
 	loading:false,
 	footerShow:true
 };
 
 const mutations={
 	/*头部*/
+	   [SUBLIBTN](state,index){
+	   	console.log(index)
+	        state.subsnump=index;
+	    },
 	[HEAD_SHOW_SUCCESS](state){
 		state.headShow=true;
 	},
@@ -39,15 +44,16 @@ const mutations={
 };
 
 const getters={
-	headShow(state){
-		return state.headShow;
-	},
-	loading(state){
-		return state.loading;
-	},
-	footerShow(state){
-		return state.footerShow;
-	}
+    count:(state)=>{
+        return state.count;
+    },
+    getOdd(state){
+        return state.count%2==0?"这货2偶数":"这是奇数"
+    },
+    subsnump:(state)=>{
+    	return state.subsnump
+    }
+
 };
 
 export default{
