@@ -35,7 +35,6 @@ import * as types from './type'
 
 export default{
     sublibtn:({commit,state},index)=>{
-    	console.log(index)
         commit(types.SUBLIBTN,index)
     },
     getdocumentHeight(){

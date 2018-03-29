@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import SmData from '@/components/SmData'
+import Gjjs from '@/components/Gjjs'
 import Index from '@/components/index'
 import Main from '@/components/main'
 
@@ -24,7 +25,13 @@ export default new Router({
     {
       path: '/main',
       name: 'Main',
-      component: Main
+      component: Main,
+      children: [
+        {
+            path: '/Gjjs',
+            component: Gjjs,
+        }
+      ]
     },
     {
       path: '/SmData',

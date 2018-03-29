@@ -11,7 +11,7 @@
 <div class="showmap" ><span class="iconfont icon-earth"></span><div class="maptxt">查看公司布图</div></div>
 <div style="display:inline;float:left; padding-top:2px; margin-left:16px"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div>
 <div class="sf" style="float:right; padding-right:8px; font-size:18px">
-<span class="iconfont icon-category" style=""></span>
+<span class="iconfont icon-category"></span>
 <span class="iconfont icon-emailfilling" style="color:rgba(79, 159, 222, 1)"></span>
 <span></span>
 </div>
@@ -32,8 +32,7 @@ export default {
   name: 'Main',
   data () {
     return {
-    rightNavArray:[{name:"高级检索",temp:"gjjs"},{name:"我的产品池",temp:"wdcpc"},{name:"对比库",temp:"dbk"},{name:"产品快速预览",temp:"cpksyl"},]
-     
+    rightNavArray:[{name:"高级检索",url:"Gjjs"},{name:"我的产品池",url:"wdcpc"},{name:"对比库",url:"dbk"},{name:"产品快速预览",url:"cpksyl"},]
     }
   }
  ,components:{
@@ -41,21 +40,13 @@ export default {
     }
   ,computed:mapGetters(['count','getOdd','subsnump'])
   ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync"])
-  ,mounted: function () {this.getdocumentHeight();this.getcurrentMenu();},
-  watch:{
-      /*$route(to){
+  ,mounted: function () {this.getdocumentHeight();this.getcurrentMenu();}
+  ,watch:{
+      $route(to){
         var path=to.path.substring(1);
         this.getcurrentMenu(path)
-      }*/
+      }
     }
- /* ,methods:{
-
-   
-     sublibtn(num){
-        this.subsnum=num
-     }
-  }
-     */
 }
 
 
@@ -87,6 +78,5 @@ export default {
     min-width:350px;
     border-left:1px solid #ccc;
     background-color:#fff;
-
 }
 </style>

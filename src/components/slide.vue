@@ -3,14 +3,17 @@
 <!--内容开始-->
 <div class="nav clearfix">
 <ul>
-<li v-for="(item,index) in sublistArray"  @click.stop="$emit('li',index)" :class="{check:index==subsnum}" >{{item.name}}</li>
+<!--<li v-for="(item,index) in sublistArray"  @click.stop="$emit('li',index)" :class="{check:index==subsnum}" >{{item.name}}</li>-->
+  <router-link v-for="(item,index) in sublistArray"  :to="item.url" tag="li" :class="{check:index==subsnum}">
+          {{item.name}}
+  </router-link>
 <!--<li>我的产品池</li>
 <li>对比库</li>
 <li>产品快速浏览</li>-->
 </ul>
 </div>
 <div class="slidemain">
-
+  <router-view/>
 </div>
 </div>
 <!--内容结束-->

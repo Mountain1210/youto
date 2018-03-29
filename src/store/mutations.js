@@ -17,7 +17,6 @@ const state={
 const mutations={
 	/*头部*/
 	   [SUBLIBTN](state,index){
-	   	console.log(index)
 	        state.subsnump=index;
 	    },
 	[HEAD_SHOW_SUCCESS](state){
