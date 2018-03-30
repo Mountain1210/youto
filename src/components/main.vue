@@ -32,7 +32,7 @@ export default {
   name: 'Main',
   data () {
     return {
-    rightNavArray:[{name:"高级检索",url:"Gjjs"},{name:"我的产品池",url:"wdcpc"},{name:"对比库",url:"dbk"},{name:"产品快速预览",url:"cpksyl"},]
+    rightNavArray:[{name:"高级检索",url:"/main/Gjjs"},{name:"我的产品池",url:"Wdcpc"},{name:"对比库",url:"Dbk"},{name:"产品快速预览",url:"Cpksyl"},]
     }
   }
  ,components:{
@@ -70,13 +70,17 @@ export default {
 .main .mainlist {overflow:hidden}
 .main .mainlist #subleftContent{
     float:left;
-    width:65%;
+    width:100%;
+    display: table-cell;
 }
+.main .mainlist #subleftContent{}
 .main .mainlist #subrightContent{
-    float:left;
+    display: table-cell;
     width:34.8%;
     min-width:350px;
     border-left:1px solid #ccc;
     background-color:#fff;
+        vertical-align: top;
 }
+.main .mainlist{display: table; width:100%}
 </style>

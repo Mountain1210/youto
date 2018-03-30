@@ -10,6 +10,9 @@ Vue.config.productionTip = false
 require('./assets/css/base.css');
 require('./assets/css/icon.css');
 /* eslint-disable no-new */
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
 
 axios.interceptors.request.use(function (config) {  //配置发送请求的信息

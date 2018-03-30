@@ -4,7 +4,7 @@
 <div class="nav clearfix">
 <ul>
 <!--<li v-for="(item,index) in sublistArray"  @click.stop="$emit('li',index)" :class="{check:index==subsnum}" >{{item.name}}</li>-->
-  <router-link v-for="(item,index) in sublistArray"  :to="item.url" tag="li" :class="{check:index==subsnum}">
+  <router-link v-for="(item,index) in sublistArray"  :to="item.url" tag="li"  active-class="check">
           {{item.name}}
   </router-link>
 <!--<li>我的产品池</li>
@@ -39,4 +39,6 @@ export default {
   background: -moz-linear-gradient(#fff,#F0FBFF, #fff); /* Firefox 3.6 - 15 */
   background: linear-gradient(#fff,#F0FBFF, #fff); /* 标准的语法 */cursor: pointer;}
 .nav li.check{top:1px; font-size:14px; color:#000; background-color:#fff; }
+.slidemain{padding:16px; text-align:left; font-size:14px}
+.slidemain .el-date-editor--datetimerange.el-input__inner{width:250px}
 </style>
