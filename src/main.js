@@ -9,10 +9,16 @@ import stores from './store/store'
 Vue.config.productionTip = false
 require('./assets/css/base.css');
 require('./assets/css/icon.css');
+require('fixed-data-table/dist/fixed-data-table.css');  
 /* eslint-disable no-new */
 import ElementUI from 'element-ui';
+
 import 'element-ui/lib/theme-chalk/index.css';
+import 'vue-easytable/libs/themes-base/index.css'
 Vue.use(ElementUI);
+import {VTable,VPagination} from 'vue-easytable'
+Vue.component(VTable.name, VTable)
+Vue.component(VPagination.name, VPagination)
 
 
 axios.interceptors.request.use(function (config) {  //配置发送请求的信息

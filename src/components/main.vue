@@ -16,7 +16,13 @@
 <span></span>
 </div>
 </div>
-<!--<div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>-->
+<div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>
+<v-table is-horizontal-resize
+                 style="width:100%"
+                 :height="200"
+                 :columns="columns"
+                 :table-data="tableData">
+        </v-table>
 </div>
 <div id="subrightContent">
 <Slide :sublistArray="rightNavArray"  @li="sublibtn($event)" :subsnum="subsnump"></Slide>
@@ -33,6 +39,19 @@ export default {
   data () {
     return {
     rightNavArray:[{name:"高级检索",url:"/main/Gjjs"},{name:"我的产品池",url:"Wdcpc"},{name:"对比库",url:"Dbk"},{name:"产品快速预览",url:"Cpksyl"},]
+   ,tableData: [
+                           {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼"},
+                           {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},
+                           {"name":"孙伟","tel":"161*****0097","hobby":"钢琴、书法、唱歌","address":"上海市崇明县城桥镇八一路739号"},
+                           {"name":"周伟","tel":"197*****1123","hobby":"钢琴、书法、唱歌","address":"上海市青浦区青浦镇章浜路24号"},
+                           {"name":"吴伟","tel":"183*****6678","hobby":"钢琴、书法、唱歌","address":"上海市松江区乐都西路867-871号"}
+                    ],
+                    columns: [
+                           {field: 'name', title:'姓名', width: 150, titleAlign: 'center',columnAlign:'center', isFrozen: true},
+                           {field: 'tel', title: '手机号码', width: 280, titleAlign: 'center',columnAlign:'center',isResize:true},
+                           {field: 'hobby', title: '爱好', width: 380, titleAlign: 'center',columnAlign:'center',isResize:true},
+                           {field: 'address', title: '地址', width: 430, titleAlign: 'center',columnAlign:'left',isResize:true}
+                    ]
     }
   }
  ,components:{
@@ -60,7 +79,7 @@ export default {
 .sf .iconfont{padding-right:8px}
 .showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
 .showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
-#searchContent  .searchinput{border:1px solid #ccc}
+#searchContent  .searchinput{border:1px solid #ccc; padding:3px 0 ; margin-top:-2px}
 #searchContent button{background-color:rgba(79, 159, 222, 1); color:#fff}
 #subleftContent .ct{float:left; color:#000}
 #subleftContent .titxt{margin-right:8px; padding-top:2px}
