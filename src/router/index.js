@@ -33,14 +33,18 @@ export default new Router({
             name: 'Gjjs',
             component: Gjjs,
         },
+           {
+            path: '/main',
+            redirect: 'Gjjs'
+        },
         {
             path: '/Wdcpc',
             name: 'Wdcpc',
             component: Wdcpc,
         }
       ]
-    },
-    {
+    }
+    ,{
       path: '/SmData',
       name: 'SmData',
       component: SmData
