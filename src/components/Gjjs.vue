@@ -82,7 +82,7 @@
 <li>
 <span class="demonstration">　　　　</span>
 <div class="tjzb" style="width:80px; display:inline-block">
-<el-select v-model="value4" placeholder="请选择">
+<el-select v-model="value5" placeholder="请选择">
     <el-option
       v-for="item in options4"
       :key="item.value"
@@ -109,7 +109,7 @@
 <li>
 <span class="demonstration">　　　　</span>
 <div class="tjzb" style="width:80px; display:inline-block">
-<el-select v-model="value4" placeholder="请选择">
+<el-select v-model="value6" placeholder="请选择">
     <el-option
       v-for="item in options4"
       :key="item.value"
@@ -136,7 +136,7 @@
 <li>
 <span class="demonstration">　　　　</span>
 <div class="tjzb" style="width:80px; display:inline-block">
-<el-select v-model="value4" placeholder="请选择">
+<el-select v-model="value7" placeholder="请选择">
     <el-option
       v-for="item in options4"
       :key="item.value"
@@ -327,6 +327,9 @@
         value2:''
         ,value3:''
         ,value4:''
+        ,value5:''
+        ,value6:''
+        ,value7:''
         ,radio3: '日'
         ,input10: ''
 
