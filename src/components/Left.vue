@@ -1,45 +1,59 @@
 <template>
   <div id="leftContent">
-  <ul>
+  <ul id="leftmenu">
   <li class="smjj"><span  class="iconfont icon-data"></span>私募基金产品</li>
   <li class="smcm"><span  class="iconfont icon-home"></span>私募基金公司</li>
+
+    <router-link :to="item.url" tag="li" active-class="active" v-for="item in menuArray" >
+          {{item.name}}
+  </router-link>
   </ul>
   </div>
 </template>
 
 <script>
+
+//https://www.cnblogs.com/dupd/p/5887907.html
 export default {
   name: 'Top',
   data () {
     return {
-     
+     menuArray:[]
     }
   },
-    mounted: function () {
+  mounted: function () {
             this.getdocumentHeight();
 
          
-        },
+    },
     watch:{
       $route(to){
         var path=to.path.substring(1);
         this.getcurrentMenu(path)
+
       }
     },
   methods:{
     getdocumentHeight(){
-            document.getElementById("leftContent").style.height=document.documentElement.clientHeight-80+"px";
+            document.getElementById("leftContent").style.height=document.documentElement.clientHeight+"px";
     },
     getcurrentMenu(path){
+
      var _this=this;
-      if(path=="SmData"){       
-        this.$http.get('/src/data/menuData/MenuData.html').then(function(res){
-          console.log(res);          
+      if(path=="SmData"){     
+    
+        this.$http.get('/static/data/menuData/MenuData.html').then(function(res){
+          console.log(this.menuArray)
+          //console.log(res.data)
         }).catch(function(err){
+
           console.log('文章详细页面:',err);
         })
       }
     }
+  }
+  ,created(){
+      console.log(this.menuArray)
   }
 }
 </script>
