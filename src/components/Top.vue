@@ -1,6 +1,6 @@
 <template>
 <div class="topContent">
-  <div class="logo">{{logo}}</div>
+  <div class="logo">  <router-link to="/"  active-class="active">{{logo}}  </router-link></div>
   <ul class="navul">
   <router-link :to="item.url" tag="li" active-class="active" v-for="item in navArray" >
           {{item.name}}
@@ -40,4 +40,5 @@ export default {
 .messageContent .question{border-radius:4px; background-color:#57b0e6; font-size:14px; padding:4px 8px}
 .messageContent .message{padding-top: 3px;}
 .messageContent .person{margin-right:12px;padding-top: 3px;}
+.logo a{color:#fff; text-decoration:none}
 </style>

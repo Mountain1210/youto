@@ -18,6 +18,7 @@ export default new Router({
       name: 'Index',
       component: Index
     },
+
     {
       path: '/SmData',
       name: 'SmData',

@@ -28,7 +28,7 @@ export default {
     },
   methods:{
     getdocumentHeight(){
-            document.getElementById("leftContent").style.height=document.documentElement.clientHeight-130+"px";
+            document.getElementById("leftContent").style.height=document.documentElement.clientHeight-80+"px";
     },
     getcurrentMenu(path){
      var _this=this;

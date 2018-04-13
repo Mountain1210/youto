@@ -38,7 +38,7 @@ export default{
         commit(types.SUBLIBTN,index)
     },
     getdocumentHeight(){
-            document.getElementById("subrightContent").style.height=document.documentElement.clientHeight-130+40+"px";
+            document.getElementById("subrightContent").style.height=document.documentElement.clientHeight-90+"px";
     },
      getcurrentMenu(path){
    
