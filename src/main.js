@@ -9,7 +9,7 @@ import stores from './store/store'
 Vue.config.productionTip = false
 require('./assets/css/base.css');
 require('./assets/css/icon.css');
-require('fixed-data-table/dist/fixed-data-table.css');  
+//require('fixed-data-table/dist/fixed-data-table.css');  
 /* eslint-disable no-new */
 import ElementUI from 'element-ui';
 
