@@ -1,10 +1,11 @@
 <template>
   <div id="leftContent">
+
   <ul id="leftmenu">
   <li class="smjj"><span  class="iconfont icon-data"></span>私募基金产品</li>
   <li class="smcm"><span  class="iconfont icon-home"></span>私募基金公司</li>
 
-    <router-link :to="item.url" tag="li" active-class="active" v-for="item in menuArray" >
+    <router-link :to="item.url" tag="li" active-class="active" v-for="item in submenu.subMenu" >
           {{item.name}}
   </router-link>
   </ul>
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-
+import {mapGetters,mapActions} from "vuex"
 //https://www.cnblogs.com/dupd/p/5887907.html
 export default {
   name: 'Top',
@@ -29,31 +30,41 @@ export default {
     watch:{
       $route(to){
         var path=to.path.substring(1);
-        this.getcurrentMenu(path)
+        //console.log(path)
+        this.getcurrentMenu(path);
+
 
       }
-    },
-  methods:{
+    }
+    ,computed:mapGetters(['count','getOdd','subsnump','submenu'])
+  ,methods:{
     getdocumentHeight(){
             document.getElementById("leftContent").style.height=document.documentElement.clientHeight+"px";
-    },
-    getcurrentMenu(path){
+    }
+   , getcurrentMenu(path){
 
      var _this=this;
+     console.log(this.submenu[0])
       if(path=="SmData"){     
-    
-        this.$http.get('/static/data/menuData/MenuData.html').then(function(res){
-          console.log(this.menuArray)
-          //console.log(res.data)
+         this.submenu.forEach(function (value) {
+          console.log(value.subMenu);
+          });
+        /*this.$http.get('/static/data/menuData/MenuData.html').then(function(res){
+                 //console.log(res.data)
         }).catch(function(err){
 
           console.log('文章详细页面:',err);
-        })
+        })*/
+
       }
     }
   }
   ,created(){
-      console.log(this.menuArray)
+//这里进行调用
+     console.log(this.submenu[0])
+
+
+    
   }
 }
 </script>

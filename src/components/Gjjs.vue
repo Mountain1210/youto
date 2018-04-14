@@ -335,6 +335,14 @@
 
       };
     }
+    , watch:{
+      $route(to){
+        var path=to.path.substring(1);
+        console.log(path)
+       // this.getcurrentMenu(path)
+
+      }
+    }
   };
 </script>
 

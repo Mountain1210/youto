@@ -29,6 +29,14 @@ export default {
       msg: 'slide'
     }
   }
+  ,watch:{
+      $route(to){
+        var path=to.path.substring(1);
+        console.log(this.$store)
+        this.getcurrentMenu(path)
+
+      }
+    }
 }
 </script>
 

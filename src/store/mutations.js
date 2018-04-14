@@ -11,7 +11,14 @@ import {
 const state={
 	subsnump:0,
 	loading:false,
-	footerShow:true
+	footerShow:true,
+	count:3,
+	submenu:[
+	{
+		name:"SmData",
+		subMenu:[{name:"私1募基金产品",url:"smsection1"},{name:"私募2基金公司",url:"smsection2"}]
+	}
+]
 };
 
 const mutations={
@@ -51,6 +58,10 @@ const getters={
     },
     subsnump:(state)=>{
     	return state.subsnump
+    },
+     submenu:(state)=>{
+
+    	return state.submenu
     }
 
 };

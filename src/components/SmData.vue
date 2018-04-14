@@ -83,14 +83,16 @@ export default {
   ,mounted: function () {this.getdocumentHeight();this.getcurrentMenu();}
   ,watch:{
       $route(to){
+
         var path=to.path.substring(1);
         this.getcurrentMenu(path)
       }
     }
+  ,created(){
+
+//this.$store.dispatch('clickOdd')
+  }
 }
-
-
-
 </script>
 
 <style scoped>
