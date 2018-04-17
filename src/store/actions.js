@@ -42,8 +42,11 @@ export default {
     sublibtn: ({ commit, state }, index) => {
         commit(types.SUBLIBTN, index)
     },
+    getdocumentLeftHeight() {
+        document.getElementById("leftContent").style.height = document.documentElement.clientHeight - 80 + "px";
+    },
     getdocumentHeight() {
-        document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 90 + "px";
+        document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
     },
     lstfunc: ({ commit, state }, obj) => {
         if (localStorage.currentUrl != null) {

@@ -24,32 +24,29 @@ export default {
      menuArray:[]
     }
   },
+  beforeMount:function(){
+   var allcurrenturl=localStorage.getItem("currentUrl");
+   var obj=JSON.parse(allcurrenturl);
+   this.lstfunc(obj);
+  
+  },
   mounted: function () {
-      this.getdocumentHeight();
-      var allcurrenturl=localStorage.getItem("currentUrl");
-      console.log("下面是LST中输出");
-      console.log(allcurrenturl);
-      console.log("下面是LST中结束");
-      var obj=JSON.parse(allcurrenturl)
-      this.lstfunc(obj);
+     this.getdocumentHeight();
+     this.getdocumentLeftHeight();
     },
     watch:{
       $route(to){
         var path=to.path.substring(1);
-
         if(path==""){
-         this.$store.dispatch("getcurrentMenu","/")
-            /*
-                 这里需要进行路由判断是否是"/","SmD"
-             */
+           this.$store.dispatch("getcurrentMenu","/");
             return
-        }else if(path=="SmData"){
+        }else{
             this.$store.dispatch("getcurrentMenu",path)
         }
       }
     }
     ,computed:mapGetters(['count','getOdd','subsnump','submenu'])
-    ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","lstfunc"])
+    ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","lstfunc","getdocumentLeftHeight"])
   ,created(){
    
   }

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import SmData from '@/components/SmData'
+import GmData from '@/components/GmData'
 import Gjjs from '@/components/Gjjs'
 import Wdcpc from '@/components/Wdcpc'
 import Index from '@/components/index'
@@ -49,6 +50,11 @@ export default new Router({
       path: '/SmData',
       name: 'SmData',
       component: SmData
+    }
+     ,{
+      path: '/GmData',
+      name: 'GmData',
+      component: GmData
     }
   ]
 })
