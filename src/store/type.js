@@ -12,3 +12,5 @@ export const SUBLIBTN='SUBLIBTN';
 export const DEINCREMENT='DEINCREMENT';
 export const CLICKODD='CLICKODD';
 export const CLICKASYNC='CLICKASYNC';
+export const GETSECONDMENU='GETSECONDMENU'
+export const LST='LST'

@@ -2,10 +2,13 @@
   <div id="leftContent">
 
   <ul id="leftmenu">
-  <li class="smjj"><span  class="iconfont icon-data"></span>私募基金产品</li>
-  <li class="smcm"><span  class="iconfont icon-home"></span>私募基金公司</li>
+<!--  <li class="smjj"><span  class="iconfont icon-data"></span>私募基金产品</li>
+  <li class="smcm"><span  class="iconfont icon-home"></span>私募基金公司</li>-->
 
-    <router-link :to="item.url" tag="li" active-class="active" v-for="item in submenu.subMenu" >
+    <!--<router-link :to="submenu.name" tag="li" active-class="active">
+          {{submenu.name}}
+  </router-link>-->
+  <router-link :to="item.name" tag="li" active-class="active" v-for="item in submenu.subMenuu" >
           {{item.name}}
   </router-link>
   </ul>
@@ -14,7 +17,6 @@
 
 <script>
 import {mapGetters,mapActions} from "vuex"
-//https://www.cnblogs.com/dupd/p/5887907.html
 export default {
   name: 'Top',
   data () {
@@ -23,48 +25,33 @@ export default {
     }
   },
   mounted: function () {
-            this.getdocumentHeight();
-
-         
+      this.getdocumentHeight();
+      var allcurrenturl=localStorage.getItem("currentUrl");
+      console.log("下面是LST中输出");
+      console.log(allcurrenturl);
+      console.log("下面是LST中结束");
+      var obj=JSON.parse(allcurrenturl)
+      this.lstfunc(obj);
     },
     watch:{
       $route(to){
         var path=to.path.substring(1);
-        //console.log(path)
-        this.getcurrentMenu(path);
 
-
+        if(path==""){
+         this.$store.dispatch("getcurrentMenu","/")
+            /*
+                 这里需要进行路由判断是否是"/","SmD"
+             */
+            return
+        }else if(path=="SmData"){
+            this.$store.dispatch("getcurrentMenu",path)
+        }
       }
     }
     ,computed:mapGetters(['count','getOdd','subsnump','submenu'])
-  ,methods:{
-    getdocumentHeight(){
-            document.getElementById("leftContent").style.height=document.documentElement.clientHeight+"px";
-    }
-   , getcurrentMenu(path){
-
-     var _this=this;
-     console.log(this.submenu[0])
-      if(path=="SmData"){     
-         this.submenu.forEach(function (value) {
-          console.log(value.subMenu);
-          });
-        /*this.$http.get('/static/data/menuData/MenuData.html').then(function(res){
-                 //console.log(res.data)
-        }).catch(function(err){
-
-          console.log('文章详细页面:',err);
-        })*/
-
-      }
-    }
-  }
+    ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","lstfunc"])
   ,created(){
-//这里进行调用
-     console.log(this.submenu[0])
-
-
-    
+   
   }
 }
 </script>

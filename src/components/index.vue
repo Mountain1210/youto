@@ -32,11 +32,10 @@ export default{
     }
       ,computed:mapGetters(['count','getOdd','subsnump'])
   ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync"])
-  ,mounted: function () {this.getdocumentHeight();this.getcurrentMenu();}
+  ,mounted: function () {this.getdocumentHeight();}
   ,watch:{
       $route(to){
         var path=to.path.substring(1);
-        this.getcurrentMenu(path)
       }
     }
 }
