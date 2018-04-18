@@ -36,7 +36,7 @@ export default {
   name: 'GmData',
   data () {
     return {
-    rightNavArray:[{name:"高级检索",url:"/main/Gjjs"},{name:"我的产品池",url:"Wdcpc"},{name:"对比库",url:"Dbk"},{name:"产品快速预览",url:"Cpksyl"},]
+    rightNavArray:[{name:"高级检索",url:"/GmData/Gjjs"},{name:"我的产品池",url:"/GmData/Wdcpc"},{name:"对比库",url:"/GmData/Dbk"},{name:"产品快速预览",url:"/GmData/Cpksyl"},]
    ,tableData: [
                            {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼"},
                            {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},

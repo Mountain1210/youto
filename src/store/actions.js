@@ -45,6 +45,20 @@ export default {
     getdocumentLeftHeight() {
         document.getElementById("leftContent").style.height = document.documentElement.clientHeight - 80 + "px";
     },
+      customCompFunc(params){
+
+                console.log(params);
+
+                if (params.type === 'delete'){ // do delete operation
+
+                    this.$delete(this.tableData,params.index);
+
+                }else if (params.type === 'edit'){ // do edit operation
+
+                    alert(`行号：${params.index} 姓名：${params.rowData['name']}`)
+                }
+
+            },
     getdocumentHeight() {
         document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
     },

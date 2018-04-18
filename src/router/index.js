@@ -23,7 +23,33 @@ export default new Router({
     {
       path: '/SmData',
       name: 'SmData',
-      component: SmData
+      component: SmData,
+       children: [
+        {
+            path: '/SmData/Gjjs',
+            name: 'Gjjs',
+            component: Gjjs,
+        },
+           {
+            path: '/SmData',
+            redirect: 'Gjjs'
+        },
+        {
+            path: '/SmData/Wdcpc',
+            name: 'Wdcpc',
+            component: Wdcpc,
+        }
+        // ,{
+        //     path: '/SmData/Dbk',
+        //     name: 'Dbk',
+        //     component: Dbk,
+        // },
+        // {
+        //     path: '/SmData/Cpksyl',
+        //     name: 'Cpksyl',
+        //     component: Cpksyl,
+        // }
+      ]
     },
     {
       path: '/main',

@@ -161,7 +161,7 @@
   </div>
 </li>
 
-<li style="padding:24px 0 0 105px"><el-button type="primary">主要按钮</el-button>  <el-button type="info">信息按钮</el-button></li>
+<li style="padding:24px 0 0 105px"><el-button type="primary" @click="alertt()">主要按钮</el-button>  <el-button type="info" >信息按钮</el-button></li>
 </ul>
 
 
@@ -342,6 +342,19 @@
        // this.getcurrentMenu(path)
 
       }
+    }
+    ,methods:{
+      /*alertt(){
+       this.$http({
+        method:"get",
+        url:""
+        data:{
+
+        }
+       }).then(function(){
+
+       })
+      }*/
     }
   };
 </script>
