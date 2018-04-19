@@ -45,20 +45,28 @@ export default {
     getdocumentLeftHeight() {
         document.getElementById("leftContent").style.height = document.documentElement.clientHeight - 80 + "px";
     },
-      customCompFunc(params){
+    getGjjsbtn: ({ commit, state }, index) => {
 
+        // commit(types.GETGJJS)
+         axios({
+             method: 'get',
+             url: '/static/data/gjjsData/gjjsData.html'
+         }).then(function(res){
+            let obj=res.data;
+            commit(types.GETGJJS, obj)
+         }).catch(function(err) {
+            console.log('获取高级索的中的数据:', err);
+        })
+         
+    }
+    ,customCompFunc(params){
                 console.log(params);
-
                 if (params.type === 'delete'){ // do delete operation
-
                     this.$delete(this.tableData,params.index);
-
                 }else if (params.type === 'edit'){ // do edit operation
-
                     alert(`行号：${params.index} 姓名：${params.rowData['name']}`)
                 }
-
-            },
+     },
     getdocumentHeight() {
         document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
     },
@@ -74,7 +82,7 @@ export default {
         }).then(function(res) {
             let sightdata = null;
             res.data.forEach(function(item, index) {
-                if (item.name == path) {
+                if (path.indexOf(item.name)!=-1) {
                     console.log(item)
                     commit(types.GETSECONDMENU, item)
                 }

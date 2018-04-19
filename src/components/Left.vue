@@ -36,12 +36,15 @@ export default {
     },
     watch:{
       $route(to){
-        var path=to.path.substring(1);
-        if(path==""){
+        var path=to.path.substring(1);        
+        path=path.split("/");
+console.log(path[0])
+        if(path[0]==""){
            this.$store.dispatch("getcurrentMenu","/");
             return
         }else{
-            this.$store.dispatch("getcurrentMenu",path)
+
+            this.$store.dispatch("getcurrentMenu",path[0])
         }
       }
     }

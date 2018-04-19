@@ -161,13 +161,14 @@
   </div>
 </li>
 
-<li style="padding:24px 0 0 105px"><el-button type="primary" @click="alertt()">主要按钮</el-button>  <el-button type="info" >信息按钮</el-button></li>
+<li style="padding:24px 0 0 105px"><el-button type="primary" @click="getGjjsbtn">主要按钮</el-button>  <el-button type="info" >信息按钮</el-button></li>
 </ul>
 
 
 </template>
 
 <script>
+import {mapGetters,mapActions} from "vuex"
   export default {
   name: 'Gjjs',
     data() {
@@ -335,27 +336,8 @@
 
       };
     }
-    , watch:{
-      $route(to){
-        var path=to.path.substring(1);
-        console.log(path)
-       // this.getcurrentMenu(path)
-
-      }
-    }
-    ,methods:{
-      /*alertt(){
-       this.$http({
-        method:"get",
-        url:""
-        data:{
-
-        }
-       }).then(function(){
-
-       })
-      }*/
-    }
+  ,computed:mapGetters(['searchJSON'])
+  ,methods:mapActions(['getGjjsbtn'])
   };
 </script>
 

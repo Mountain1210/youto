@@ -14,3 +14,5 @@ export const CLICKODD='CLICKODD';
 export const CLICKASYNC='CLICKASYNC';
 export const GETSECONDMENU='GETSECONDMENU'
 export const LST='LST'
+export const GETTABLEDATA='GETTABLEDATA'
+export const GETGJJS='GETGJJS'
