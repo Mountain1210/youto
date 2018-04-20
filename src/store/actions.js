@@ -3,6 +3,7 @@ import * as types from './type'
 import Vue from 'Vue'
 import Vuex from 'vuex' 
 import axios from 'axios' 
+import layer from 'vue-layer'
 Vue.use(Vuex)
 
 //console.log(types)
@@ -42,11 +43,24 @@ export default {
     sublibtn: ({ commit, state }, index) => {
         commit(types.SUBLIBTN, index)
     },
+    isopen:({commit,state})=>{
+        alert(2342)
+        commit(types.ISOPEN)
+    },
     getdocumentLeftHeight() {
         document.getElementById("leftContent").style.height = document.documentElement.clientHeight - 80 + "px";
     },
+    handleClose:({ commit, state },done)=>{
+            this.$confirm('确认关闭？')
+                      .then(_ => {
+                        alert(done)
+                        done();
+                      })
+                      .catch(_ => {});
+    },
     getGjjsbtn: ({ commit, state }, index) => {
-
+//ayer.alert("点击了按钮")
+console.log(layer)
         // commit(types.GETGJJS)
          axios({
              method: 'get',

@@ -9,7 +9,8 @@ import {
     GETSECONDMENU,
     LST,
     GETTABLEDATA,
-    GETGJJS
+    GETGJJS,
+    ISOPEN
 
 } from './type'
 import Vue from 'vue'
@@ -17,6 +18,7 @@ import Vue from 'vue'
 
 
 const state = {
+    dialogVisible:false,
     subsnump: 0,
     loading: false,
     footerShow: true,
@@ -83,7 +85,11 @@ const mutations = {
         console.log(datas)
         console.log("=============================")
         state.searchJSON=datas;
-    }
+    },
+     [ISOPEN](state){
+        state.dialogVisible=!state.dialogVisible
+     }
+
 
 
 
@@ -137,6 +143,9 @@ const getters = {
     searchJSON: (state) => {
 
         return state.searchJSON
+    }
+    ,dialogVisible:(state)=>{
+        return state.dialogVisible;
     }
 
 };

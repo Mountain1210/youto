@@ -4,6 +4,18 @@
 <div class="mainlist">
 <div id="subleftContent">
 <div class="func">
+<el-button type="text" @click="isopen">点击打开 Dialog</el-button>
+<el-dialog
+  title="提示"
+  :visible.sync="dialogVisible"
+  width="30%"
+  :before-close="handleClose">
+  <span>这是一段信息</span>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="isopen">取 消</el-button>
+    <el-button type="primary" @click="isopen">确 定</el-button>
+  </span>
+</el-dialog>
 <Search></Search>
 <div class="showmap" ><span class="iconfont icon-earth"></span><div class="maptxt">查看公司布图</div></div>
 <div style="display:inline;float:left; padding-top:2px; margin-left:16px"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div>
@@ -47,7 +59,7 @@ export default {
       Slide,Search
     }
   ,computed:mapGetters(['searchJSON','subsnump'])
-  ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc"])
+  ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
   ,mounted: function () {this.getdocumentHeight();}
   ,created(){
 
