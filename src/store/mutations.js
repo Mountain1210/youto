@@ -10,7 +10,10 @@ import {
     LST,
     GETTABLEDATA,
     GETGJJS,
-    ISOPEN
+
+    ISOPEN,
+    CLOSEDIOAG
+
 
 } from './type'
 import Vue from 'vue'
@@ -81,13 +84,10 @@ const mutations = {
     //     state.searchJSON=tabdatas;
     // }
     [GETGJJS](state,datas){
-        console.log("=============================")
-        console.log(datas)
-        console.log("=============================")
-        state.searchJSON=datas;
+       state.searchJSON=datas;
     },
-     [ISOPEN](state){
-        state.dialogVisible=!state.dialogVisible
+     [ISOPEN](state,flag){
+        state.dialogVisible=flag
      }
 
 
