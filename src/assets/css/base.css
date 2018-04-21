@@ -1,20 +1,20 @@
-@charset "utf-8";
+@charset 'utf-8';
 
 /*
-@åç§°: base
-@åŠŸèƒ½: é‡è®¾æµè§ˆå™¨é»˜è®¤æ ·å¼
+@Ãû³Æ: base
+@¹¦ÄÜ: ÖØÉèä¯ÀÀÆ÷Ä¬ÈÏÑùÊ½
 */
 
-
-/* é˜²æ­¢ç”¨æˆ·è‡ªå®šä¹‰èƒŒæ™¯é¢œè‰²å¯¹ç½‘é¡µçš„å½±å“ï¼Œæ·»åŠ è®©ç”¨æˆ·å¯ä»¥è‡ªå®šä¹‰å­—ä½“ */
-
-html {
+/* ·ÀÖ¹ÓÃ»§×Ô¶¨Òå±³¾°ÑÕÉ«¶ÔÍøÒ³µÄÓ°Ïì£¬Ìí¼ÓÈÃÓÃ»§¿ÉÒÔ×Ô¶¨Òå×ÖÌå */
+html
+{
     color: black;
     background: white;
+    color:#fff;
 }
 
 
-/* å†…å¤–è¾¹è·é€šå¸¸è®©å„ä¸ªæµè§ˆå™¨æ ·å¼çš„è¡¨ç°ä½ç½®ä¸åŒ */
+/* ÄÚÍâ±ß¾àÍ¨³£ÈÃ¸÷¸öä¯ÀÀÆ÷ÑùÊ½µÄ±íÏÖÎ»ÖÃ²»Í¬ */
 
 body,
 div,
@@ -53,71 +53,81 @@ header,
 hgroup,
 menu,
 nav,
-section {
+section
+{
     margin: 0;
     padding: 0;
 }
 
 
-/* è¦æ³¨æ„è¡¨å•å…ƒç´ å¹¶ä¸ç»§æ‰¿çˆ¶çº§ font çš„é—®é¢˜ */
+/* Òª×¢Òâ±íµ¥ÔªËØ²¢²»¼Ì³Ğ¸¸¼¶ font µÄÎÊÌâ */
 
 body,
 button,
 input,
 select,
-textarea {
+textarea
+{
     font: 12px SimSun, tahoma, arial, sans-serif;
 }
 
 input,
 select,
-textarea {
+textarea
+{
     font-size: 100%;
 }
 
 
-/* å»æ‰å„Table cell çš„è¾¹è·å¹¶è®©å…¶è¾¹é‡åˆ */
+/* È¥µô¸÷Table cell µÄ±ß¾à²¢ÈÃÆä±ßÖØºÏ */
 
-table {
-    border-collapse: collapse;
+table
+{
     border-spacing: 0;
+    border-collapse: collapse;
 }
 
 
-/* IE bug fixed: th ä¸ç»§æ‰¿ text-align*/
+/* IE bug fixed: th ²»¼Ì³Ğ text-align*/
 
-th {
+th
+{
     text-align: inherit;
 }
 
 
-/* å»é™¤é»˜è®¤è¾¹æ¡† */
+/* È¥³ıÄ¬ÈÏ±ß¿ò */
 
 fieldset,
-img {
+img
+{
     border: none;
 }
 
 
-/* ie6 7 8(q) bug æ˜¾ç¤ºä¸ºè¡Œå†…è¡¨ç° */
+/* ie6 7 8(q) bug ÏÔÊ¾ÎªĞĞÄÚ±íÏÖ */
 
-iframe {
+iframe
+{
     display: block;
 }
 
 
-/* å»æ‰ firefox ä¸‹æ­¤å…ƒç´ çš„è¾¹æ¡† */
+/* È¥µô firefox ÏÂ´ËÔªËØµÄ±ß¿ò */
 
 abbr,
-acronym {
-    border: none;
+acronym
+{
     font-variant: normal;
+
+    border: none;
 }
 
 
-/* ä¸€è‡´çš„ del æ ·å¼ */
+/* Ò»ÖÂµÄ del ÑùÊ½ */
 
-del {
+del
+{
     text-decoration: line-through;
 }
 
@@ -128,156 +138,186 @@ code,
 dfn,
 em,
 th,
-var {
-    font-style: normal;
+var
+{
     font-weight: 500;
+    font-style: normal;
 }
 
 
-/* å»æ‰åˆ—è¡¨å‰çš„æ ‡è¯†, li ä¼šç»§æ‰¿ */
+/* È¥µôÁĞ±íÇ°µÄ±êÊ¶, li »á¼Ì³Ğ */
 
 ol,
-ul {
+ul
+{
     list-style: none;
 }
 
 
-/* å¯¹é½æ˜¯æ’ç‰ˆæœ€é‡è¦çš„å› ç´ , åˆ«è®©ä»€ä¹ˆéƒ½å±…ä¸­ */
+/* ¶ÔÆëÊÇÅÅ°æ×îÖØÒªµÄÒòËØ, ±ğÈÃÊ²Ã´¶¼¾ÓÖĞ */
 
 caption,
-th {
+th
+{
     text-align: left;
 }
 
 
-/* æ¥è‡ªyahoo, è®©æ ‡é¢˜éƒ½è‡ªå®šä¹‰, é€‚åº”å¤šä¸ªç³»ç»Ÿåº”ç”¨ */
+/* À´×Ôyahoo, ÈÃ±êÌâ¶¼×Ô¶¨Òå, ÊÊÓ¦¶à¸öÏµÍ³Ó¦ÓÃ */
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6
+{
     font-size: 100%;
     font-weight: 500;
 }
 
 q:before,
-q:after {
+q:after
+{
     content: '';
 }
 
 
-/* ç»Ÿä¸€ä¸Šæ ‡å’Œä¸‹æ ‡ */
+/* Í³Ò»ÉÏ±êºÍÏÂ±ê */
 
 sub,
-sup {
+sup
+{
     font-size: 75%;
     line-height: 0;
+
     position: relative;
+
     vertical-align: baseline;
 }
 
-sup {
-    top: -0.5em;
+sup
+{
+    top: -.5em;
 }
 
-sub {
-    bottom: -0.25em;
+sub
+{
+    bottom: -.25em;
 }
 
 
-/* è®©é“¾æ¥åœ¨ hover çŠ¶æ€ä¸‹æ˜¾ç¤ºä¸‹åˆ’çº¿ */
+/* ÈÃÁ´½ÓÔÚ hover ×´Ì¬ÏÂÏÔÊ¾ÏÂ»®Ïß */
 
-a:hover {
+a:hover
+{
     text-decoration: underline;
 }
 
 
-/* é»˜è®¤ä¸æ˜¾ç¤ºä¸‹åˆ’çº¿ï¼Œä¿æŒé¡µé¢ç®€æ´ */
+/* Ä¬ÈÏ²»ÏÔÊ¾ÏÂ»®Ïß£¬±£³ÖÒ³Ãæ¼ò½à */
 
 ins,
-a {
+a
+{
     text-decoration: none;
 }
 
 
-/* IE6,7ç„¦ç‚¹ç‚¹çŠ¶çº¿å»é™¤ */
+/* IE6,7½¹µãµã×´ÏßÈ¥³ı */
 
 a:focus,
-*:focus {
+*:focus
+{
     outline: none;
 }
 
 
-/* æ¸…é™¤æµ®åŠ¨ */
+/* Çå³ı¸¡¶¯ */
 
 .clearfix:before,
-.clearfix:after {
-    content: "";
+.clearfix:after
+{
     display: table;
+
+    content: '';
 }
 
-.clearfix:after {
+.clearfix:after
+{
     clear: both;
     overflow: hidden;
 }
 
-.clearfix {
+.clearfix
+{
     zoom: 1;
     /* for IE6 IE7 */
 }
 
-.clear {
-    clear: both;
-    display: block;
-    overflow: hidden;
-    height: 0;
-    line-height: 0;
+.clear
+{
     font-size: 0;
+    line-height: 0;
+
+    display: block;
+    clear: both;
+    overflow: hidden;
+
+    height: 0;
 }
 
 
-/* è®¾ç½®æ˜¾ç¤ºå’Œéšè—, é€šå¸¸ç”¨æ¥ä¸ JS é…åˆ */
+/* ÉèÖÃÏÔÊ¾ºÍÒş²Ø, Í¨³£ÓÃÀ´Óë JS ÅäºÏ */
 
-.hide {
+.hide
+{
     display: none !important;
     visibility: hidden;
 }
 
-.block {
+.block
+{
     display: block !important;
 }
 
 
-/* è®¾ç½®å†…è”, å‡å°‘æµ®åŠ¨å¸¦æ¥çš„bug */
+/* ÉèÖÃÄÚÁª, ¼õÉÙ¸¡¶¯´øÀ´µÄbug */
 
-.fl {
+.fl
+{
+    display: inline;
     float: left;
-    display: inline;
 }
 
-.fr {
+.fr
+{
+    display: inline;
     float: right;
-    display: inline;
 }
 
-#app {
+#app
+{
     min-width: 1024px;
 }
 
-#leftContent {
-    background-color: #24344e;
-    color: #fff;
+#leftContent
+{
+    font-size: 14px;
+
     width: 220px;
     padding: 25px 0;
-    font-size: 14px;
+
+    color: #fff;
+    background-color: #24344e;
 }
 
-#leftContent li {
+#leftContent li
+{
     padding: 8px;
 }
 
-#leftContent li span:before {
+#leftContent li span:before
+{
     margin-right: 8px;
 }

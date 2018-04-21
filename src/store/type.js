@@ -8,6 +8,3 @@ export const GETTABLEDATA='GETTABLEDATA'
 export const GETGJJS='GETGJJS'
 export const ISOPEN='ISOPEN'
 export const CLOSEDIOAG='CLOSEDIOAG'
-
-
-
