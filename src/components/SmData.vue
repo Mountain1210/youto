@@ -8,7 +8,8 @@
 <el-dialog
   title="提示"
   :visible.sync="dialogVisible"
-  width="30%"
+  width="75%"
+  height="500"
   :before-close="handleClose">
   <span>这是一段信息</span>
   <span slot="footer" class="dialog-footer">
@@ -70,8 +71,8 @@ export default {
 
  Vue.component('tableoperation',{
         template:`<span>
-        <a href="" @click.stop.prevent="update(rowData,index)">{{editxt}}111</a>&nbsp;
-        <a href="" @click.stop.prevent="deleteRow(rowData,index)">{{deletxt}}222</a>
+        <a href="" @click.stop.prevent="update(rowData,index)">{{editxt}}</a>&nbsp;
+        <a href="" @click.stop.prevent="deleteRow(rowData,index)">{{deletxt}}</a>
         </span>`,
         props:{                
                     rowData:{
