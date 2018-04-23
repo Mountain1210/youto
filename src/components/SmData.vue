@@ -4,16 +4,17 @@
 <div class="mainlist">
 <div id="subleftContent">
 <div class="func">
-<el-button type="text" @click="isopen">点击打开 Dialog</el-button>
+<el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button>
 <el-dialog
   title="提示"
   :visible.sync="dialogVisible"
-  width="30%"
+  width="75%"
+  height="500"
   :before-close="handleClose">
   <span>这是一段信息</span>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="isopen">取 消</el-button>
-    <el-button type="primary" @click="isopen">确 定</el-button>
+    <el-button @click="isopen(0)">取 消</el-button>
+    <el-button type="primary" @click="isopen(2)">确 定</el-button>
   </span>
 </el-dialog>
 <Search></Search>
@@ -58,7 +59,7 @@ export default {
  ,components:{
       Slide,Search
     }
-  ,computed:mapGetters(['searchJSON','subsnump'])
+  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
   ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
   ,mounted: function () {this.getdocumentHeight();}
   ,created(){
@@ -66,18 +67,14 @@ export default {
   }
 }
 
-
-
-
 //下面组件必须写在这个js 里面
 
  Vue.component('tableoperation',{
         template:`<span>
-        <a href="" @click.stop.prevent="update(rowData,index)">{{editxt}}111</a>&nbsp;
-        <a href="" @click.stop.prevent="deleteRow(rowData,index)">{{deletxt}}222</a>
+        <a href="" @click.stop.prevent="update(rowData,index)">{{editxt}}</a>&nbsp;
+        <a href="" @click.stop.prevent="deleteRow(rowData,index)">{{deletxt}}</a>
         </span>`,
-        props:{
-                
+        props:{                
                     rowData:{
                         type:Object
                     },
@@ -93,7 +90,7 @@ export default {
                     deletxt:{
                       type:String
                     }
-                },
+            },
         methods:{
             update(){
 
