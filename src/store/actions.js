@@ -3,8 +3,13 @@ import * as types from './type'
 import Vue from 'Vue'
 import Vuex from 'vuex' 
 import axios from 'axios' 
-
+// import ElementUI from 'element-ui';
 Vue.use(Vuex)
+
+
+
+
+
 
 //console.log(types)
 /*export default{
@@ -44,6 +49,7 @@ export default {
         commit,
         state
     }, num) => {
+
         if (num == 1) {
             commit(types.ISOPEN, true)
         } else if (num == 2) {
@@ -58,13 +64,10 @@ export default {
     handleClose: ({
         commit,
         state
-    }, done) => {
-        this.$confirm('确认关闭？')
-            .then(_ => {
-                alert(done)
+    },done) => {
+        window.vue.$confirm('确认关闭？').then(_ => {
                 done();
-            })
-            .catch(_ => {});
+            }).catch(_ => {});
     },
     getGjjsbtn: ({
         commit,

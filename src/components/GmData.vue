@@ -79,8 +79,15 @@ export default {
       Slide,Search
     }
   ,computed:mapGetters(['count','getOdd','subsnump'])
-  ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync"])
-  ,mounted: function () {this.getdocumentHeight();}
+  // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd:","clickAsync"])
+  ,methods:{
+    clickOdd:function(){
+      this.$store.dispatch("clickOdd");
+    }
+  }
+  ,mounted: function () {
+    this.$store.dispatch("getdocumentHeight");//这里可以用dispatch来触发action中的方法
+  }
  /* ,watch:{
       $route(to){
         var path=to.path.substring(1);

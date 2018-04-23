@@ -61,7 +61,9 @@ export default {
     }
   ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
   ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
-  ,mounted: function () {this.getdocumentHeight();}
+  ,mounted: function () {
+console.log(this);
+    this.getdocumentHeight();}
   ,created(){
 
   }
@@ -116,18 +118,14 @@ export default {
 .sf .iconfont{padding-right:8px}
 .showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
 .showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
-
-
 .main{margin-left:220px; margin-top:0px;}
 #subleftContent{ background-color:#fff}
-
 .main .mainlist {overflow:hidden}
 .main .mainlist #subleftContent{
     float:left;
     width:100%;
     display: table-cell;
 }
-
 .main .mainlist #subrightContent{
     display: table-cell;
     width:34.8%;
