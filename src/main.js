@@ -5,9 +5,9 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import stores from './store/store'
+import echarts from 'echarts'
 import {
   MessageBox
-
 } from 'element-ui'
 Vue.prototype.$confirm = MessageBox.confirm
 Vue.config.productionTip = false
@@ -41,7 +41,8 @@ axios.interceptors.response.use(function (response) { //配置请求回来的信
 });
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.baseURL='http://localhost:8080/';
-Vue.prototype.$http = axios  
+Vue.prototype.$http = axios;
+Vue.prototype.$echarts = echarts; 
 window.vue = new Vue({
   el: '#app',
   router,

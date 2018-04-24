@@ -22,7 +22,7 @@ export default {
   data () {
     return {
       logo: '量牛投研分析平台',
-      navArray:[{name:'私幕数据',url:"/SmData"},{name:'公幕数据',url:"/GmData"},{name:'评分排名',url:'/main'},{name:'研究分析',url:'/yjfx'},{name:'组合管理',url:'/zhgl'},{name:'我的工作区',url:'/myww'}]
+      navArray:[{name:'私幕数据',url:"/SmData"},{name:'公幕数据',url:"/GmData"},{name:'评分排名',url:'/main'},{name:'研究分析',url:'/detial'},{name:'组合管理',url:'/zhgl'},{name:'我的工作区',url:'/myww'}]
     }
   }
 }

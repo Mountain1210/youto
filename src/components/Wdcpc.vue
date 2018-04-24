@@ -13,12 +13,12 @@ export default {
     }
   },
   mounted: function () {
-            this.getdocumentHeight();
+            // this.getdocumentHeight();
         },
   methods:{
-    getdocumentHeight(){
-            document.getElementById("leftContent").style.height=document.documentElement.clientHeight-130+"px";
-    }
+    // getdocumentHeight(){
+    //         document.getElementById("leftContent").style.height=document.documentElement.clientHeight-130+"px";
+    // }
   }
 }
 </script>

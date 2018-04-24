@@ -6,6 +6,7 @@ import Gjjs from '@/components/Gjjs'
 import Wdcpc from '@/components/Wdcpc'
 import Index from '@/components/index'
 import Main from '@/components/main'
+import Detial from '@/components/detial'
 
 Vue.use(Router)
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/',
       name: 'Index',
       component: Index
+    },
+    {
+      path: '/detial',
+      name: 'Detial',
+      component: Detial
     },
 
     {

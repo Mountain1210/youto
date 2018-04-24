@@ -1,17 +1,10 @@
 <template>
   <div id="leftContent">
-
-  <ul id="leftmenu">
-<!--  <li class="smjj"><span  class="iconfont icon-data"></span>私募基金产品</li>
-  <li class="smcm"><span  class="iconfont icon-home"></span>私募基金公司</li>-->
-
-    <!--<router-link :to="submenu.name" tag="li" active-class="active">
-          {{submenu.name}}
-  </router-link>-->
-  <router-link :to="item.name" tag="li" active-class="active" v-for="item in submenu.subMenuu" >
-          {{item.name}}
-  </router-link>
-  </ul>
+      <ul id="leftmenu">
+        <router-link :to="item.name" tag="li" active-class="active" v-for="item in submenu.subMenuu" >
+                {{item.name}}
+        </router-link>
+      </ul>
   </div>
 </template>
 
@@ -27,11 +20,10 @@ export default {
   beforeMount:function(){
    var allcurrenturl=localStorage.getItem("currentUrl");
    var obj=JSON.parse(allcurrenturl);
-   this.lstfunc(obj);
-  
+   this.lstfunc(obj);  
   },
   mounted: function () {
-     this.getdocumentHeight();
+     this.getdocumentHeight();     
      this.getdocumentLeftHeight();
     },
     watch:{

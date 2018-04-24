@@ -79,7 +79,7 @@ export default {
       Slide,Search
     }
   ,computed:mapGetters(['count','getOdd','subsnump'])
-  // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd:","clickAsync"])
+  // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd:","clickAsync"])放在当前的
   ,methods:{
     clickOdd:function(){
       this.$store.dispatch("clickOdd");

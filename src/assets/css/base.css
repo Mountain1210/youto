@@ -12,7 +12,7 @@ html
     background: white;
 }
 
-
+*{font-family: "微软雅黑"}
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
 
 body,

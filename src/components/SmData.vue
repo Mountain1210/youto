@@ -62,7 +62,6 @@ export default {
   ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
   ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
   ,mounted: function () {
-console.log(this);
     this.getdocumentHeight();}
   ,created(){
 
