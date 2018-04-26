@@ -26,9 +26,27 @@
 .detialContent .jjxqtxt{border-bottom:2px solid #dedede;}
 .detialContent .jjxqtxt .zjsr p{margin-right:18px;}
 .detialContent .product-info{border:1px solid #f6f6f6; margin-top:24px; border-bottom:2px solid #e1e1e1; }
-.detialContent .product-info h2{font-size:14px; text-align: left}
-.detialContent .product-info .content{}
-/*.detialContent .jjxqtxt li p:last-child{text-align: left; padding-right: 16px; border-right:1px dashed #d1d1d1;}*/
+.detialContent .product-info h2{font-size:14px; text-align: left;
+background: linear-gradient(#fff,#f5f5f5,#fff);
+border-bottom: 1px solid #f6f6f6;
+}
+.detialContent .divtab{}
+
+.detialContent .divtab ul{display: table; width: 100%; border-top:1px solid #ccc; border-left:1px solid #ccc; }
+.detialContent .divtab ul li{display:table-cell; width:16.6%; padding:8px 0; border-right:1px solid #ccc;}
+.detialContent .divtab ul:last-child{ border-bottom:1px solid #ccc;}
+.detialContent .divtab ul .titname{background-color:#AFB943FF; color: #fff}
+.detialContent .jingzhi{overflow: hidden}
+.detialContent .jingzhi table th,.detialContent .jingzhi table td{text-align: center; padding:8px 0;}
+.detialContent .jingzhi table th{background-color: #e9e9e9e9}
+.detialContent  .jingzhi dl{width:49.5%; border: 1px solid #d1d1d1}
+.detialContent  .jingzhi dl dt{border-bottom:1px solid #d1d1d1; padding: 8px; text-align: left; font-weight: bold}
+.detialContent .jingzhi dl:first-child{float: left}
+.detialContent .jingzhi dl:last-child{float: right}
+.detialContent .jingzhi .ddtab{}
+.detialContent .jingzhi .ddtab .title{display: table; width: 100%; padding:8px 0; background-color: #e1e1e1; border-bottom:1px solid #e1e1e1;}
+.detialContent .jingzhi .ddtab .title li{display: table-cell; text-align: center}
+.detialContent .jingzhi .el-table th{text-align: center!important}
 </style>
 
 <template>
@@ -55,11 +73,9 @@
 						<p class="firstp"><span class="bdwjz-j">2.0057</span><br><span>近3个月收益</span></p>
 						<p class="firstp"><span class="bdwjz-sh">2.0057</span><br><span>今年以来收益</span></p>
 						<p class="firstp"><span class="bdwjz-sh">2.0057</span><br><span>近1年收益</span></p>
-
 					</li>
-					<li class="kzr">
-						
-							<p class="txtleft">
+					<li class="kzr">						
+						<p class="txtleft">
 							<span>实际管理人</span>：<span><a href="#">光大兴陇信托有限责任公司	</a></span><br>
 							<span>基金编号</span>：<span>2018-04-13</span>
 						</p>
@@ -69,14 +85,77 @@
 						</p>
 					</li>
 				</ul>
+				
 			</div>
-			<div class="product-info paddinglr24">
-				<h2><span>产品信息</span></h2>
-				<div class="content">
-					
+			<div class="product-info">
+				<h2 class="paddinglr24"><span>产品信息</span></h2>
+				<div class="content paddinglr24">
+					<div width="100%" class="divtab">
+						<ul>
+							<li class="titname">管理类型:</li>
+							<li class="namemain"></li>
+							<li class="titname">投资策略:</li>
+							<li class="namemain"></li>
+							<li class="titname">托管机构:</li>
+							<li></li>
+						</ul>
+						<ul>
+							<li class="titname">投资顾问:</li>
+							<li class="namemain"></li>
+							<li class="titname">运行状态:</li>
+							<li class="namemain"></li>
+							<li class="titname">外包机构:</li>
+							<li class="namemain"></li>
+							
+						</ul>
+						<ul>
+							<li class="titname">基金经理:</li>
+							<li class="namemain"></li>
+							<li class="titname">基金存续日期:</li>
+							<li class="namemain"></li>
+							<li class="titname">无固定期限(天):</li>
+							<li class="namemain"></li>
+						</ul>
+
+					</div>
+
+					<div class="clearfix" style="height:10px"></div>
+				<div class="jingzhi">
+					<dl>
+						<dt>净值明细</dt>
+						<dd class="ddtab">
+							<el-table
+							    :data="tableData"
+							    stripe
+							    style="width: 100%">
+							    <el-table-column
+							    align="center"
+							      prop="date"
+							      label="日期"
+							      width="180">
+							    </el-table-column>
+							    <el-table-column
+							    align="center"
+							      prop="name"
+							      label="姓名"
+							      width="180">
+							    </el-table-column>
+							    <el-table-column
+							    align="center"
+							      prop="address"
+							      label="地址">
+							    </el-table-column>
+							  </el-table>
+						</dd>
+					</dl>
+					<dl>
+						<dt>净值曲线</dt>
+						<dd><div id="myChart" :style="{width: '100%', height: '240px'}" class="paddinglr24"></div></dd>
+					</dl>
+				</div>
 				</div>
 			</div>
-			<div id="myChart" :style="{width: '100%', height: '300px'}" class="paddinglr24"></div>
+			
 		</div>
 		
 	</div>
@@ -84,8 +163,30 @@
 
 <script>
 import {mapGetters,mapActions} from "vuex"
+
 export default{
     name:"Detial"
+    ,data() {
+      return {
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }]
+      }
+    }
     ,mounted(){
     	this.drawLine();
     }
@@ -95,7 +196,6 @@ export default{
     	       let myChart = this.$echarts.init(document.getElementById('myChart'))
     	       // 绘制图表
     	       myChart.setOption({
-    	           title: { text: '使用echarts展示图表' },
     	           tooltip: {},
     	           xAxis: {
     	               data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
@@ -103,7 +203,7 @@ export default{
     	           yAxis: {},
     	           series: [{
     	               name: '销量',
-    	               type: 'bar',
+    	               type: 'line',
     	               data: [5, 20, 36, 10, 10, 20]
     	           }]
     	       });
