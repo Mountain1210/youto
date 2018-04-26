@@ -12,6 +12,7 @@ html
     background: white;
 }
 body{overflow:hidden}
+#subrightContent{overflow-y:scroll;}
 *{font-family: "微软雅黑"}
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
 

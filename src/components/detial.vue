@@ -25,12 +25,13 @@
 .detialContent .jjxqtxt,.detialContent .tittext{border-bottom:1px solid #f6f6f6;}
 .detialContent .jjxqtxt{border-bottom:2px solid #dedede;}
 .detialContent .jjxqtxt .zjsr p{margin-right:18px;}
-.detialContent .product-info{border:1px solid #f6f6f6; margin-top:24px; border-bottom:2px solid #e1e1e1; }
-.detialContent .product-info h2{font-size:14px; text-align: left;
+.detialContent .product-info,.detialContent .company-info{border:1px solid #f6f6f6; margin-top:24px; border-bottom:2px solid #e1e1e1; }
+.detialContent .product-info h2,.detialContent .company-info h2{font-size:14px; text-align: left;
 background: linear-gradient(#fff,#f5f5f5,#fff);
 border-bottom: 1px solid #f6f6f6;
 }
 .detialContent .divtab{}
+.detialContent .company-info .gsmain{padding:8px 24px; line-height: 24px; text-align: left}
 
 .detialContent .divtab ul{display: table; width: 100%; border-top:1px solid #ccc; border-left:1px solid #ccc; }
 .detialContent .divtab ul li{display:table-cell; width:16.6%; padding:8px 0; border-right:1px solid #ccc;}
@@ -47,6 +48,7 @@ border-bottom: 1px solid #f6f6f6;
 .detialContent .jingzhi .ddtab .title{display: table; width: 100%; padding:8px 0; background-color: #e1e1e1; border-bottom:1px solid #e1e1e1;}
 .detialContent .jingzhi .ddtab .title li{display: table-cell; text-align: center}
 .detialContent .jingzhi .el-table th{text-align: center!important}
+#subrightContent{}
 </style>
 
 <template>
@@ -153,6 +155,21 @@ border-bottom: 1px solid #f6f6f6;
 						<dd><div id="myChart" :style="{width: '100%', height: '240px'}" class="paddinglr24"></div></dd>
 					</dl>
 				</div>
+
+				</div>
+			</div>
+
+			<div class="company-info">
+				<h2 class="paddinglr24"><span>公司信息</span></h2>
+				<div class="gsmain">
+					　法国总统马克龙星期一抵达华盛顿，进行为期三天的国事访问。法广网称，法国总统马克龙也成为特朗普出任美国总统以来，第一位被邀请前来美国进行国事访问的外国领袖。此次国事访问也“凸显法美两国友谊”。
+					　　他们确实是一对奇怪的夫妻:71岁的房地产大亨和真人秀节目主持人，在晚年变成了保守党政客和专业的推特人;而40岁的法国总统则是一位法国平民主义者;他的短暂职业生涯几乎没有做过什么，但实际上是在为这个时刻做好准备。
+					　　这是一个实用主义的奇特联姻，即将面临终极考验。法国著名的报纸《每日世界》评论称，这是“强大，但同样令人震惊”的关系。问题是，每个人希望从对方那里得到什么?
+					　　德国之声称，伊朗核协议预料是马克龙访美的首要议题。特朗普已定下5月12日的期限，要求欧洲在此之前“解决”2015年伊朗核协议的“缺陷”，否则美国将退出协议。
+					　　已成为特朗普最喜爱的欧洲伙伴的马克，则要代表欧洲敦促特朗普勿撕毁伊朗核协议。他认为，除了2015年的协议可限制伊朗的导弹计划和区域影响力，对付伊朗，没有任何备案。
+					　　伊朗的外交部长扎里夫呼吁欧盟各国，应当积极要求特朗普实践自己的承诺，放松对伊朗的经济制裁。
+					　　美国有线电视新闻网称，马克龙此次访美还有一个重要目的，就是要求美国对欧盟钢铁和铝制品永久豁免关税。在贸易方面，法国领导人已经为这个问题做好了准备。
+					　　同样在贸易方面，特朗普需要一个强大的胜利——很大程度上是为了让美国中西部选民铭记，因为在与中国的贸易战中，他们的大豆、谷物和猪肉的主要市场受到潜在影响。
 				</div>
 			</div>
 			
@@ -189,6 +206,7 @@ export default{
     }
     ,mounted(){
     	this.drawLine();
+    	this.getdocumentHeight();
     }
     ,methods:{
     	drawLine(){
@@ -208,6 +226,9 @@ export default{
     	           }]
     	       });
     	   }
+    	,getdocumentHeight() {
+        document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
+    },
     }
     
 
