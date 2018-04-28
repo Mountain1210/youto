@@ -284,7 +284,7 @@ export default{
                  city: '普陀区',
                  address: '上海市普陀区金沙江路 1518 弄',
                  zip: 200333,
-                 url:"demo1.vue"
+                 url:"Urltabview.vue"
                }, {
                  date: '2016-05-02',
                  name: '王小虎',
@@ -292,7 +292,7 @@ export default{
                  city: '普陀区',
                  address: '上海市普陀区金沙江路 1518 弄',
                  zip: 200333,
-                 url:"demo1.vue"
+                 url:"Urltabview.vue"
                }, {
                  date: '2016-05-04',
                  name: '王小虎',
@@ -300,7 +300,7 @@ export default{
                  city: '普陀区',
                  address: '上海市普陀区金沙江路 1518 弄',
                  zip: 200333,
-                 url:"demo1.vue"
+                 url:"Urltabview.vue"
                }, {
                  date: '2016-05-01',
                  name: '王小虎',
@@ -308,7 +308,7 @@ export default{
                  city: '普陀区',
                  address: '上海市普陀区金沙江路 1518 弄',
                  zip: 200333,
-                 url:"demo1.vue"
+                 url:"Urltabview.vue"
                }, {
                  date: '2016-05-08',
                  name: '王小虎',
@@ -316,7 +316,7 @@ export default{
                  city: '普陀区',
                  address: '上海市普陀区金沙江路 1518 弄',
                  zip: 200333,
-                 url:"demo1.vue"
+                 url:"Urltabview.vue"
                }, {
                  date: '2016-05-06',
                  name: '王小虎',
@@ -324,7 +324,7 @@ export default{
                  city: '普陀区',
                  address: '上海市普陀区金沙江路 1518 弄',
                  zip: 200333,
-                 url:"demo1.vue"
+                 url:"Urltabview.vue"
                }, {
                  date: '2016-05-07',
                  name: '王小虎',
@@ -332,7 +332,7 @@ export default{
                  city: '普陀区',
                  address: '上海市普陀区金沙江路 1518 弄',
                  zip: 200333,
-                 url:"demo1.vue"
+                 url:"Urltabview.vue"
                }]
       }
     }
@@ -362,6 +362,11 @@ export default{
         document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
     	}
     	,fun(row, column, cell, event) {
+    		if (column.label=="省份") {
+    			alert(column.label)
+
+    			this.$router.push('Urltabview')
+    		}
     		console.log(row)
     		console.log(column.label)
     		console.log(cell)

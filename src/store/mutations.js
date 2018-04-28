@@ -27,50 +27,166 @@ const state = {
     footerShow: true,
     count: 3,
     submenu: null,
-    searchJSON:{ tableData: [
-   {"name":"赵伟1","tel":"<a href='#'>156*****1987</a>","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟2","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟3","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟4","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟5","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟6","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟7","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟8","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟9","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                             {"name":"赵伟1","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟2","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟3","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟4","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟5","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟6","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟7","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟8","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟9","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥"},
-                        {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼","glgm":"7,375.15","ygrs":"100","jzrq":"2017-07-04","clrq":"2013-11-14","djrq":"2016-11-11","sfhy":"是","cpsl":"35","gsjs":"http://www.baidu.com","jtjl":"是","bgdz":"北京三元桥","editxt":"AAA","deletxt":"删除"},
-                    ],
-                    columns: [
-                           {field: 'name', title:'序号', width: 50, titleAlign: 'center',columnAlign:'center', isFrozen: true},
-                           {field: 'tel', title: '公司简称', width: 250, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'hobby', title: '注册资本(万)', width: 120, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'address', title: '实缴比例', width: 80, titleAlign: 'center',columnAlign:'left',isResize:true},
-                           {field: 'glgm', title: '管理规模', width: 80, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'ygrs', title: '员工人数', width: 80, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'jzrq', title: '截至日期', width: 160, titleAlign: 'center',columnAlign:'left',isResize:true},
-                            {field: 'clrq', title:'成立日期', width: 160, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'djrq', title: '登记日期', width: 260, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'sfhy', title: '是否会员', width: 40, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'cpsl', title: '产品数量', width: 80, titleAlign: 'center',columnAlign:'left',isResize:true},
-                           {field: 'gsjs', title: '公司介绍', width: 80, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'jljl', title: '尽量记录', width: 380, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'bgdz', title: '办公地址', width: 430, titleAlign: 'center',columnAlign:'left',isResize:true},
-                           {field: 'bgdz2', title: '操作', width: 120, titleAlign: 'center',columnAlign:'left',isResize:true,componentName:"tableoperation"}
-                    ]}
-};
+    searchJSON:{ tableData: [{
+        number:"1"
+        ,number2:"2323"
+        ,gsjc:"中天嘉禾"
+        ,zczb:"10000"
+        ,sjbs:"100"
+        ,glgm:"4"
+        ,ygrs:"201812"
+        ,jzrq:"2018-1-1"
+        ,clrq:"是"
+        ,djrq:"110"
+        ,ishy:"是"
+        ,pronum:"13"
+        ,cominfo:"我要理财我要理财我要理财我要理财"
+        ,jljl:"三元桥三元桥三元桥三元桥"
+        ,address:"三元桥三元桥三元桥三元桥"
+        ,operat1:"这是操作"
+        ,operat2:"这是操作2"
+        },{
+        number:"2"
+        ,number2:"2323"
+        ,gsjc:"中天嘉禾"
+        ,zczb:"10000"
+        ,sjbs:"100"
+        ,glgm:"4"
+        ,ygrs:"201812"
+        ,jzrq:"2018-1-1"
+        ,clrq:"是"
+        ,djrq:"110"
+        ,ishy:"是"
+        ,pronum:"13"
+        ,cominfo:"我要理财我要理财我要理财我要理财"
+        ,jljl:"三元桥三元桥三元桥三元桥"
+        ,address:"三元桥三元桥三元桥三元桥"
+        ,operat1:"这是操作"
+        ,operat2:"这是操作2"
+        },{
+        number:"3"
+        ,number2:"2323"
+        ,gsjc:"中天嘉禾"
+        ,zczb:"10000"
+        ,sjbs:"100"
+        ,glgm:"4"
+        ,ygrs:"201812"
+        ,jzrq:"2018-1-1"
+        ,clrq:"是"
+        ,djrq:"110"
+        ,ishy:"是"
+        ,pronum:"13"
+        ,cominfo:"我要理财我要理财我要理财我要理财"
+        ,jljl:"三元桥三元桥三元桥三元桥"
+        ,address:"三元桥三元桥三元桥三元桥"
+        ,operat1:"这是操作"
+        ,operat2:"这是操作2"
+        },{
+        number:"4"
+        ,number2:"2323"
+        ,gsjc:"中天嘉禾"
+        ,zczb:"10000"
+        ,sjbs:"100"
+        ,glgm:"4"
+        ,ygrs:"201812"
+        ,jzrq:"2018-1-1"
+        ,clrq:"是"
+        ,djrq:"110"
+        ,ishy:"是"
+        ,pronum:"13"
+        ,cominfo:"我要理财我要理财我要理财我要理财"
+        ,jljl:"三元桥三元桥三元桥三元桥"
+        ,address:"三元桥三元桥三元桥三元桥"
+        ,operat1:"这是操作"
+        ,operat2:"这是操作2"
+        }],
+        tableData3: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip1: 200333,
+          zip2: 200333,
+          zip3: 200333,
+          zip4: 200333,
+          zip5: 200333,
+          zip5: 200333,
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip1: 200333,
+          zip2: 200333,
+          zip3: 200333,
+          zip4: 200333,
+          zip5: 200333,
+          zip5: 200333,
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip1: 200333,
+          zip2: 200333,
+          zip3: 200333,
+          zip4: 200333,
+          zip5: 200333,
+          zip5: 200333,
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip1: 200333,
+          zip2: 200333,
+          zip3: 200333,
+          zip4: 200333,
+          zip5: 200333,
+          zip5: 200333,
+        }, {
+          date: '2016-05-08',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip1: 200333,
+          zip2: 200333,
+          zip3: 200333,
+          zip4: 200333,
+          zip5: 200333,
+          zip5: 200333,
+        }, {
+          date: '2016-05-06',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip1: 200333,
+          zip2: 200333,
+          zip3: 200333,
+          zip4: 200333,
+          zip5: 200333,
+          zip5: 200333,
+        }, {
+          date: '2016-05-07',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip1: 200333,
+          zip2: 200333,
+          zip3: 200333,
+          zip4: 200333,
+          zip5: 200333,
+          zip6: 200333,
+        }]
+}
+}
 
 const mutations = {
     [GETSECONDMENU](state, datas) {
