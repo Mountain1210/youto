@@ -172,6 +172,52 @@ border-bottom: 1px solid #f6f6f6;
 					　　同样在贸易方面，特朗普需要一个强大的胜利——很大程度上是为了让美国中西部选民铭记，因为在与中国的贸易战中，他们的大豆、谷物和猪肉的主要市场受到潜在影响。
 				</div>
 			</div>
+
+			<div class="company-info">
+				<h2 class="paddinglr24"><span>旗下产品</span></h2>
+				<div class="gsmain">
+					　<el-table
+					    ref="multipleTable"
+					    fixed
+					    :data="tableData3"
+					    tooltip-effect="dark"
+					    style="width: 100%"
+					    @selection-change="handleSelectionChange"  
+					    @cell-click="fun">
+					   <el-table-column
+					        fixed
+					        prop="date"
+					        label="日期"
+					        width="150">
+					      </el-table-column>
+					      <el-table-column
+					        prop="name"
+					        label="姓名"
+					        width="120">
+					      </el-table-column>
+					      <el-table-column
+					        prop="province"
+					        label="省份"
+					        width="120">
+					      </el-table-column>
+					      <el-table-column
+					        prop="city"
+					        label="市区"
+					        width="120">
+					      </el-table-column>
+					      <el-table-column
+					        prop="address"
+					        label="地址"
+					        width="300">
+					      </el-table-column>
+					      <el-table-column
+					        prop="zip"
+					        label="邮编"
+					        width="120">
+					      </el-table-column>
+					  </el-table>
+				</div>
+			</div>
 			
 		</div>
 		
@@ -201,7 +247,93 @@ export default{
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄'
-        }]
+        }],
+        tableData3: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-08',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-06',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-07',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }],
+        tableData3: [{
+                 date: '2016-05-03',
+                 name: '王小虎',
+                 province: '上海',
+                 city: '普陀区',
+                 address: '上海市普陀区金沙江路 1518 弄',
+                 zip: 200333,
+                 url:"demo1.vue"
+               }, {
+                 date: '2016-05-02',
+                 name: '王小虎',
+                 province: '上海',
+                 city: '普陀区',
+                 address: '上海市普陀区金沙江路 1518 弄',
+                 zip: 200333,
+                 url:"demo1.vue"
+               }, {
+                 date: '2016-05-04',
+                 name: '王小虎',
+                 province: '上海',
+                 city: '普陀区',
+                 address: '上海市普陀区金沙江路 1518 弄',
+                 zip: 200333,
+                 url:"demo1.vue"
+               }, {
+                 date: '2016-05-01',
+                 name: '王小虎',
+                 province: '上海',
+                 city: '普陀区',
+                 address: '上海市普陀区金沙江路 1518 弄',
+                 zip: 200333,
+                 url:"demo1.vue"
+               }, {
+                 date: '2016-05-08',
+                 name: '王小虎',
+                 province: '上海',
+                 city: '普陀区',
+                 address: '上海市普陀区金沙江路 1518 弄',
+                 zip: 200333,
+                 url:"demo1.vue"
+               }, {
+                 date: '2016-05-06',
+                 name: '王小虎',
+                 province: '上海',
+                 city: '普陀区',
+                 address: '上海市普陀区金沙江路 1518 弄',
+                 zip: 200333,
+                 url:"demo1.vue"
+               }, {
+                 date: '2016-05-07',
+                 name: '王小虎',
+                 province: '上海',
+                 city: '普陀区',
+                 address: '上海市普陀区金沙江路 1518 弄',
+                 zip: 200333,
+                 url:"demo1.vue"
+               }]
       }
     }
     ,mounted(){
@@ -225,13 +357,31 @@ export default{
     	               data: [5, 20, 36, 10, 10, 20]
     	           }]
     	       });
-    	   }
+    	 }
     	,getdocumentHeight() {
         document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
-    },
-    }
-    
+    	}
+    	,fun(row, column, cell, event) {
+    		console.log(row)
+    		console.log(column.label)
+    		console.log(cell)
+    		console.log(event.target.innerHTML)
+    	}
+    	,toggleSelection(rows) {
+        if (rows) {
+          rows.forEach(row => {
+            this.$refs.multipleTable.toggleRowSelection(row);
+          });
+        } else {
+          this.$refs.multipleTable.clearSelection();
+        }
+      }
+      ,handleSelectionChange(val) {
+      	console.log(val[0].name)
+        this.multipleSelection = val;
+      }
 
+ }
 }
 </script>
 
