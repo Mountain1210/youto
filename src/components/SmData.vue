@@ -35,23 +35,22 @@
                  :table-data="searchJSON.tableData"
                  @on-custom-comp="customCompFunc"
                  ></v-table> -->
-<div style="width:99.5%">
+<div v-bind:style='{width:"100%",maxWidth:"1200px",overflowY:"auto"}'>
   <el-table
     :data="searchJSON.tableData"
     stripe
+    border
     align="left"
-    style="width:auto">
+    :max-height=tabht
+     @cell-click="fun"
+    >
     <el-table-column
       prop="number"
       fixed
       label="序号"
       width="60">
     </el-table-column>
-     <el-table-column
-      prop="number"
-      fixed
-      label="序号"
-      width="60">
+
     </el-table-column>
     <el-table-column
       prop="gsjc"
@@ -59,10 +58,16 @@
       label="公司简称"
     >
     </el-table-column>
-    <el-table-column
+   
+
+ <el-table-column
       prop="zczb"
+      width="110"
       label="注册资本(万)">
     </el-table-column>
+
+      
+
     <el-table-column
       prop="sjbs"
       label="实缴比例">
@@ -133,15 +138,36 @@ export default {
   data () {
     return {
      rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"},]
+     ,tabht:document.documentElement.clientHeight-145
      }
   }
  ,components:{
       Slide,Search
     }
-  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
-  ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
+  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible','tabheight'])
+  // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
+  ,methods:{
+    sublibtn:function(){
+      this.$store.dispatch("sublibtn")
+    },
+    getdocumentHeight:function(){
+      this.$store.dispatch("getdocumentHeight")
+    }
+    ,handleClose:function(){
+      this.$store.dispatch("handleClose")
+    }
+    ,isopen:function(){
+      this.$store.dispatch("isopen")
+    }
+    ,fun:function(row, column, cell, event){
+      if (column.label=="公司简称") {
+          this.$router.push('/SmData/Wdcpc')
+        }
+    }
+  }
   ,mounted: function () {
-    this.getdocumentHeight();}
+    this.getdocumentHeight();
+  }
   ,created(){
 
   }
