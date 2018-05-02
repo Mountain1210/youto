@@ -35,6 +35,7 @@
                  :table-data="searchJSON.tableData"
                  @on-custom-comp="customCompFunc"
                  ></v-table> -->
+
 <div style="width:99.9%;  max-width:1200px">
   <el-table
     :data="searchJSON.tableData"
@@ -43,23 +44,28 @@
     @cell-click="gsjcfn"
     :max-height="tabheight"
     :style='{width:"auto"}'>
+
     <el-table-column
       prop="number"
       fixed
       label="序号"
       width="60">
     </el-table-column>
+
+
     <el-table-column
       prop="gsjc"
       fixed
       label="公司简称"
     >
     </el-table-column>
+
     <el-table-column
       prop="zczb"
       width="120"
       label="注册资本(万)">
     </el-table-column>
+
     <el-table-column
       prop="sjbs"
       label="实缴比例">
@@ -131,19 +137,21 @@ export default {
   data () {
     return {
      rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"},]
+
      ,tabheight:document.documentElement.clientHeight-145
+     ,tabht:document.documentElement.clientHeight-145
      }
   }
  ,components:{
       Slide,Search
     }
-  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
-  // ,methods:mapActions(['sublibtn',"getdocumentHeight","handleClose","isopen"])
+  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible','tabheight'])
+  // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
   ,methods:{
     sublibtn:function(){
       this.$store.dispatch("sublibtn")
-    }
-    ,getdocumentHeight:function(){
+    },
+    getdocumentHeight:function(){
       this.$store.dispatch("getdocumentHeight")
     }
     ,handleClose:function(){
@@ -164,10 +172,10 @@ export default {
         // this.$router.push('/Urltabview')
       }
     }
-
   }
   ,mounted: function () {
-    this.getdocumentHeight();}
+    this.getdocumentHeight();
+  }
   ,created(){
 
   }

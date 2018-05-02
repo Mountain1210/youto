@@ -8,7 +8,11 @@ import Index from '@/components/index'
 import Main from '@/components/main'
 import Detial from '@/components/detial'
 import Urltabview from '@/components/Urltabview'
+
 import CompenyDetial from '@/components/compenyDetial'
+
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +31,7 @@ export default new Router({
       component: Urltabview
     },
     {
+
       path: '/CompenyDetial/:id',
       name: 'CompenyDetial',
       component: CompenyDetial
@@ -43,6 +48,7 @@ export default new Router({
       component: Urltabview
     },
     {
+
       path: '/detial',
       name: 'Detial',
       component: Detial

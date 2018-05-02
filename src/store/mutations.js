@@ -23,6 +23,7 @@ import Vue from 'vue'
 const state = {
     dialogVisible:false,
     subsnump: 0,
+    tabheight:500,
     loading: false,
     footerShow: true,
     count: 3,
@@ -83,6 +84,25 @@ const state = {
         ,operat2:"这是操作2"
         },{
         number:"4"
+        ,number2:"2323"
+        ,gsjc:"中天嘉禾"
+        ,zczb:"10000"
+        ,sjbs:"100"
+        ,glgm:"4"
+        ,ygrs:"201812"
+        ,jzrq:"2018-1-1"
+        ,clrq:"是"
+        ,djrq:"110"
+        ,ishy:"是"
+        ,pronum:"13"
+        ,cominfo:"我要理财我要理财我要理财我要理财"
+        ,jljl:"三元桥三元桥三元桥三元桥"
+        ,address:"三元桥三元桥三元桥三元桥"
+        ,operat1:"这是操作"
+        ,operat2:"这是操作2"
+        },
+        {
+        number:"1"
         ,number2:"2323"
         ,gsjc:"中天嘉禾"
         ,zczb:"10000"
@@ -316,6 +336,9 @@ const getters = {
     }
     ,dialogVisible:(state)=>{
         return state.dialogVisible;
+    }
+    ,tabheight:(state)=>{
+        return state.tabheight;
     }
 
 };
