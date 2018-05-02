@@ -7,6 +7,9 @@
   <router-link v-for="(item,index) in sublistArray"  :to="item.url" tag="li"  active-class="check">
           {{item.name}}
   </router-link>
+<!--<li>我的产品池</li>
+<li>对比库</li>
+<li>产品快速浏览</li>-->
 </ul>
 </div>
 <div class="slidemain">
@@ -27,7 +30,12 @@ export default {
     }
   }
   ,watch:{
+      /*$route(to){
+        var path=to.path.substring(1);
+        console.log(this.$store)
+        this.getcurrentMenu(path)
 
+      }*/
     }
 }
 </script>
