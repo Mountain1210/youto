@@ -40,6 +40,7 @@
     :data="searchJSON.tableData"
     stripe
     align="left"
+    @cell-click="gsjcfn"
     :max-height="tabheight"
     :style='{width:"auto"}'>
     <el-table-column
@@ -143,14 +144,27 @@ export default {
       this.$store.dispatch("sublibtn")
     }
     ,getdocumentHeight:function(){
- this.$store.dispatch("getdocumentHeight")
+      this.$store.dispatch("getdocumentHeight")
     }
     ,handleClose:function(){
-this.$store.dispatch("handleClose")
+      this.$store.dispatch("handleClose")
     }
     ,isopen:function(num){
-this.$store.dispatch("isopen",num)
+      this.$store.dispatch("isopen",num)
     }
+    ,gsjcfn:function(row, column, cell, event){
+      console.log(row.number)
+      console.log(column.label)
+      if(column.label=="公司简称"){
+        // this.$router.push('/Urltabview/'+row.number)
+        this.$router.push('/CompenyDetial')
+      }
+       if(column.label=="注册资本(万)"){
+        this.$router.push('/CompenyDetial/'+row.number)
+        // this.$router.push('/Urltabview')
+      }
+    }
+
   }
   ,mounted: function () {
     this.getdocumentHeight();}
