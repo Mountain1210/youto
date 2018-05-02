@@ -136,8 +136,7 @@ export default {
   name: 'SmData',
   data () {
     return {
-     rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"},]
-
+     rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"}]
      ,tabheight:document.documentElement.clientHeight-145
      ,tabht:document.documentElement.clientHeight-145
      }
