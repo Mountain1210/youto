@@ -28,13 +28,92 @@
 </div>
 <!--<div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>-->
 
-<v-table is-horizontal-resize
+<!-- <v-table is-horizontal-resize
                  style="width:100%"
                  :columns="searchJSON.columns"
                  is-vertical-resize=true
                  :table-data="searchJSON.tableData"
                  @on-custom-comp="customCompFunc"
-                 ></v-table>
+                 ></v-table> -->
+<div style="width:99.5%">
+  <el-table
+    :data="searchJSON.tableData"
+    stripe
+    align="left"
+    style="width:auto">
+    <el-table-column
+      prop="number"
+      fixed
+      label="序号"
+      width="60">
+    </el-table-column>
+     <el-table-column
+      prop="number"
+      fixed
+      label="序号"
+      width="60">
+    </el-table-column>
+    <el-table-column
+      prop="gsjc"
+      fixed
+      label="公司简称"
+    >
+    </el-table-column>
+    <el-table-column
+      prop="zczb"
+      label="注册资本(万)">
+    </el-table-column>
+    <el-table-column
+      prop="sjbs"
+      label="实缴比例">
+    </el-table-column>
+    <el-table-column
+      prop="glgm"
+      label="管理规模">
+    </el-table-column>
+    <el-table-column
+      prop="ygrs"
+      label="员工人数">
+    </el-table-column>
+    <el-table-column
+      prop="jzrq"
+      label="截至日期">
+    </el-table-column>
+    <el-table-column
+      prop="clrq"
+      label="成立日期">
+    </el-table-column>
+    <el-table-column
+      prop="djrq"
+      label="登记日期">
+    </el-table-column>
+    <el-table-column
+      prop="ishy"
+      label="是否会员">
+    </el-table-column>
+    <el-table-column
+      prop="pronum"
+      label="产品数量">
+    </el-table-column>
+    <el-table-column
+      prop="cominfo"
+      label="公司介绍">
+    </el-table-column>
+    <el-table-column
+      prop="jljl"
+      label="尽量记录">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="办公地址">
+    </el-table-column>
+    <el-table-column
+      prop="operat"
+      label="操作">
+    </el-table-column>
+
+  </el-table>
+  </div>
 </div>
 <div id="subrightContent">
 <Slide :sublistArray="rightNavArray"  @li="sublibtn($event)" :subsnum="subsnump"></Slide>
@@ -67,48 +146,6 @@ export default {
 
   }
 }
-
-//下面组件必须写在这个js 里面
-
- Vue.component('tableoperation',{
-        template:`<span>
-        <a href="" @click.stop.prevent="update(rowData,index)">{{editxt}}</a>&nbsp;
-        <a href="" @click.stop.prevent="deleteRow(rowData,index)">{{deletxt}}</a>
-        </span>`,
-        props:{                
-                    rowData:{
-                        type:Object
-                    },
-                    field:{
-                        type:String
-                    },
-                    index:{
-                        type:Number
-                    },
-                    editxt:{
-                      type:String
-                    },
-                    deletxt:{
-                      type:String
-                    }
-            },
-        methods:{
-            update(){
-
-               // 参数根据业务场景随意构造
-               let params = {type:'edit',index:this.index,rowData:this.rowData};
-               this.$emit('on-custom-comp',params);
-            },
-
-            deleteRow(){
-
-                // 参数根据业务场景随意构造
-                let params = {type:'delete',index:this.index};
-                this.$emit('on-custom-comp',params);
-
-            }
-        }
-    })
 </script>
 
 <style scoped>
@@ -121,8 +158,7 @@ export default {
 #subleftContent{ background-color:#fff}
 .main .mainlist {overflow:hidden}
 .main .mainlist #subleftContent{
-    float:left;
-    width:100%;
+    width:800px;
     display: table-cell;
 }
 .main .mainlist #subrightContent{
@@ -131,7 +167,7 @@ export default {
     min-width:350px;
     border-left:1px solid #ccc;
     background-color:#fff;
-        vertical-align: top;
+    vertical-align: top;
 }
 .main .mainlist{display: table; width:100%}
 </style>

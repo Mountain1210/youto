@@ -7,6 +7,7 @@ import Wdcpc from '@/components/Wdcpc'
 import Index from '@/components/index'
 import Main from '@/components/main'
 import Detial from '@/components/detial'
+import Urltabview from '@/components/Urltabview'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/',
       name: 'Index',
       component: Index
+    },
+    {
+      path: '/Urltabview',
+      name: 'Urltabview',
+      component: Urltabview
     },
     {
       path: '/detial',
