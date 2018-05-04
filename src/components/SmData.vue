@@ -2,22 +2,22 @@
 <div class="main">
 
 <div class="mainlist">
-<div id="subleftcontent">
+<div id="subleftContent">
 <div class="func">
-<el-button type="text" @click="isopen(1)">点击打开 dialog</el-button>
+<el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button>
 <el-dialog
   title="提示"
-  :visible.sync="dialogvisible"
+  :visible.sync="dialogVisible"
   width="75%"
   height="500"
-  :before-close="handleclose">
+  :before-close="handleClose">
   <span>这是一段信息</span>
   <span slot="footer" class="dialog-footer">
     <el-button @click="isopen(0)">取 消</el-button>
     <el-button type="primary" @click="isopen(2)">确 定</el-button>
   </span>
 </el-dialog>
-<search></search>
+<Search></Search>
 <div class="showmap" ><span class="iconfont icon-earth"></span><div class="maptxt">查看公司布图</div></div>
 <div style="display:inline;float:left; padding-top:2px; margin-left:16px"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div>
 <div class="sf" style="float:right; padding-right:8px; font-size:18px">
@@ -26,19 +26,19 @@
 <span></span>
 </div>
 </div>
-<!--<div class="subsmain" @click="clickodd"> 现在的数字为：{{count}},它现在是{{getodd}},===={{subsnump}}</div>-->
+<!--<div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>-->
 
 <!-- <v-table is-horizontal-resize
                  style="width:100%"
-                 :columns="searchjson.columns"
+                 :columns="searchJSON.columns"
                  is-vertical-resize=true
-                 :table-data="searchjson.tabledata"
-                 @on-custom-comp="customcompfunc"
+                 :table-data="searchJSON.tableData"
+                 @on-custom-comp="customCompFunc"
                  ></v-table> -->
 
 <div style="width:99.9%;  max-width:1200px">
   <el-table
-    :data="searchjson.tabledata"
+    :data="searchJSON.tableData"
     stripe
     align="left"
     @cell-click="gsjcfn"
@@ -119,41 +119,42 @@
   </el-table>
   </div>
 </div>
-<div id="subrightcontent">
-<slide :sublistarray="rightnavarray"  @li="sublibtn($event)" :subsnum="subsnump"></slide>
+<div id="subrightContent">
+<Slide :sublistArray="rightNavArray"  @li="sublibtn($event)" :subsnum="subsnump"></Slide>
 </div>
 </div>
 </div>
 </template>
 
 <script>
-import vue from 'vue'
-import {mapgetters,mapactions} from "vuex"
-import slide from "./slide.vue"
-import search from "./search.vue"
+import Vue from 'vue'
+import {mapGetters,mapActions} from "vuex"
+import Slide from "./slide.vue"
+import Search from "./search.vue"
 
 export default {
-  name: 'smdata',
+  name: 'SmData',
   data () {
     return {
-     rightnavarray:[{name:"高级检索",url:"/smdata/gjjs"},{name:"我的产品池",url:"/smdata/wdcpc"},{name:"对比库",url:"/smdata/dbk"},{name:"产品快速预览",url:"/smdata/cpksyl"}]
-     ,tabheight:document.documentelement.clientheight-145
+     rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"}]
+     ,tabheight:document.documentElement.clientHeight-145
+     ,tabht:document.documentElement.clientHeight-145
      }
   }
  ,components:{
-      slide,search
+      Slide,Search
     }
-  ,computed:mapgetters(['searchjson','subsnump','dialogvisible','tabheight'])
-  // ,methods:mapactions(['sublibtn',"getdocumentheight","getcurrentmenu","clickodd","clickasync","customcompfunc","handleclose","isopen"])
+  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible','tabheight'])
+  // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
   ,methods:{
     sublibtn:function(){
       this.$store.dispatch("sublibtn")
     },
-    getdocumentheight:function(){
-      this.$store.dispatch("getdocumentheight")
+    getdocumentHeight:function(){
+      this.$store.dispatch("getdocumentHeight")
     }
-    ,handleclose:function(){
-      this.$store.dispatch("handleclose")
+    ,handleClose:function(){
+      this.$store.dispatch("handleClose")
     }
     ,isopen:function(num){
       this.$store.dispatch("isopen",num)
@@ -162,17 +163,17 @@ export default {
       console.log(row.number)
       console.log(column.label)
       if(column.label=="公司简称"){
-        // this.$router.push('/urltabview/'+row.number)
-        this.$router.push('/compenydetial')
+        // this.$router.push('/Urltabview/'+row.number)
+        this.$router.push('/CompenyDetial')
       }
        if(column.label=="注册资本(万)"){
-        this.$router.push('/compenydetial/'+row.number)
-        // this.$router.push('/urltabview')
+        this.$router.push('/CompenyDetial/'+row.number)
+        // this.$router.push('/Urltabview')
       }
     }
   }
   ,mounted: function () {
-    this.getdocumentheight();
+    this.getdocumentHeight();
   }
   ,created(){
 
@@ -187,13 +188,13 @@ export default {
 .showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
 .showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
 .main{margin-left:220px; margin-top:0px;}
-#subleftcontent{ background-color:#fff}
+#subleftContent{ background-color:#fff}
 .main .mainlist {overflow:hidden}
-.main .mainlist #subleftcontent{
+.main .mainlist #subleftContent{
     width:800px;
     display: table-cell;
 }
-.main .mainlist #subrightcontent{
+.main .mainlist #subrightContent{
     display: table-cell;
     width:34.8%;
     min-width:350px;
