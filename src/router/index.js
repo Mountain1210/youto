@@ -42,7 +42,7 @@ export default new Router({
             name: 'Gjjs',
             component: Gjjs,
         },
-           {
+        {
             path: '/SmData',
             redirect: 'Gjjs'
         },
