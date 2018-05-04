@@ -10,11 +10,8 @@ import {
     LST,
     GETTABLEDATA,
     GETGJJS,
-
     ISOPEN,
     CLOSEDIOAG
-
-
 } from './type'
 import Vue from 'vue'
 

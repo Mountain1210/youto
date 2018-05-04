@@ -35,15 +35,16 @@
                  :table-data="searchJSON.tableData"
                  @on-custom-comp="customCompFunc"
                  ></v-table> -->
-<div v-bind:style='{width:"100%",maxWidth:"1200px",overflowY:"auto"}'>
+
+<div style="width:99.9%;  max-width:1200px">
   <el-table
     :data="searchJSON.tableData"
     stripe
-    border
     align="left"
-    :max-height=tabht
-     @cell-click="fun"
-    >
+    @cell-click="gsjcfn"
+    :max-height="tabheight"
+    :style='{width:"auto"}'>
+
     <el-table-column
       prop="number"
       fixed
@@ -51,22 +52,19 @@
       width="60">
     </el-table-column>
 
-    </el-table-column>
+
     <el-table-column
       prop="gsjc"
       fixed
       label="公司简称"
     >
     </el-table-column>
-   
 
- <el-table-column
+    <el-table-column
       prop="zczb"
-      width="110"
+      width="120"
       label="注册资本(万)">
     </el-table-column>
-
-      
 
     <el-table-column
       prop="sjbs"
@@ -82,6 +80,7 @@
     </el-table-column>
     <el-table-column
       prop="jzrq"
+      width="120"
       label="截至日期">
     </el-table-column>
     <el-table-column
@@ -137,7 +136,8 @@ export default {
   name: 'SmData',
   data () {
     return {
-     rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"},]
+     rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"}]
+     ,tabheight:document.documentElement.clientHeight-145
      ,tabht:document.documentElement.clientHeight-145
      }
   }
@@ -156,13 +156,20 @@ export default {
     ,handleClose:function(){
       this.$store.dispatch("handleClose")
     }
-    ,isopen:function(){
-      this.$store.dispatch("isopen")
+    ,isopen:function(num){
+      this.$store.dispatch("isopen",num)
     }
-    ,fun:function(row, column, cell, event){
-      if (column.label=="公司简称") {
-          this.$router.push('/SmData/Wdcpc')
-        }
+    ,gsjcfn:function(row, column, cell, event){
+      console.log(row.number)
+      console.log(column.label)
+      if(column.label=="公司简称"){
+        // this.$router.push('/Urltabview/'+row.number)
+        this.$router.push('/CompenyDetial')
+      }
+       if(column.label=="注册资本(万)"){
+        this.$router.push('/CompenyDetial/'+row.number)
+        // this.$router.push('/Urltabview')
+      }
     }
   }
   ,mounted: function () {
