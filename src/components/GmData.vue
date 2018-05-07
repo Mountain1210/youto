@@ -2,7 +2,7 @@
 <div class="main">
 
 <div class="mainlist">
-<div id="subleftContent">
+<div id="subleftContent" :style="{width:subleftw}">
 <div class="func">
 <Search></Search>
 <div class="showmap" ><span class="iconfont icon-earth"></span><div class="maptxt">查看公司布图</div></div>
@@ -13,13 +13,89 @@
 <span></span>
 </div>
 </div>
-<div class="subsmain" @click="clickOdd"> 公募现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>
-<v-table is-horizontal-resize
-                 style="width:100%"
-                 :columns="columns"
-                 is-vertical-resize=true
-                 :table-data="tableData">
-        </v-table>
+<!-- <div class="subsmain" @click="clickOdd"> 公募现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div> -->
+<div>
+  <el-table
+    :data="searchJSON.tableData"
+    stripe
+    align="left"
+    @cell-click="gsjcfn"
+    :max-height="tabheight"
+   >
+
+    <el-table-column
+      prop="number"
+      fixed
+      label="序号"
+      width="60">
+    </el-table-column>
+
+
+    <el-table-column
+      prop="gsjc"
+      fixed
+      label="公司简称"
+    >
+    </el-table-column>
+
+    <el-table-column
+      prop="zczb"
+      width="120"
+      label="注册资本(万)">
+    </el-table-column>
+
+    <el-table-column
+      prop="sjbs"
+      label="实缴比例">
+    </el-table-column>
+    <el-table-column
+      prop="glgm"
+      label="管理规模">
+    </el-table-column>
+    <el-table-column
+      prop="ygrs"
+      label="员工人数">
+    </el-table-column>
+    <el-table-column
+      prop="jzrq"
+      width="120"
+      label="截至日期">
+    </el-table-column>
+    <el-table-column
+      prop="clrq"
+      label="成立日期">
+    </el-table-column>
+    <el-table-column
+      prop="djrq"
+      label="登记日期">
+    </el-table-column>
+    <el-table-column
+      prop="ishy"
+      label="是否会员">
+    </el-table-column>
+    <el-table-column
+      prop="pronum"
+      label="产品数量">
+    </el-table-column>
+    <el-table-column
+      prop="cominfo"
+      label="公司介绍">
+    </el-table-column>
+    <el-table-column
+      prop="jljl"
+      label="尽量记录">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="办公地址">
+    </el-table-column>
+    <el-table-column
+      prop="operat"
+      label="操作">
+    </el-table-column>
+
+  </el-table>
+  </div>
 </div>
 <div id="subrightContent">
 <Slide :sublistArray="rightNavArray"  @li="sublibtn($event)" :subsnum="subsnump"></Slide>
@@ -36,53 +112,31 @@ export default {
   name: 'GmData',
   data () {
     return {
-    rightNavArray:[{name:"高级检索",url:"/GmData/Gjjs"},{name:"我的产品池",url:"/GmData/Wdcpc"},{name:"对比库",url:"/GmData/Dbk"},{name:"产品快速预览",url:"/GmData/Cpksyl"},]
-   ,tableData: [
-                           {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼"},
-                           {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},
-                           {"name":"孙伟","tel":"161*****0097","hobby":"钢琴、书法、唱歌","address":"上海市崇明县城桥镇八一路739号"},
-                           {"name":"周伟","tel":"197*****1123","hobby":"钢琴、书法、唱歌","address":"上海市青浦区青浦镇章浜路24号"},
-                           {"name":"吴伟","tel":"183*****6678","hobby":"钢琴、书法、唱歌","address":"上海市松江区乐都西路867-871号"},
-                            {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼"},
-                           {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},
-                           {"name":"孙伟","tel":"161*****0097","hobby":"钢琴、书法、唱歌","address":"上海市崇明县城桥镇八一路739号"},
-                           {"name":"周伟","tel":"197*****1123","hobby":"钢琴、书法、唱歌","address":"上海市青浦区青浦镇章浜路24号"},
-                           {"name":"吴伟","tel":"183*****6678","hobby":"钢琴、书法、唱歌","address":"上海市松江区乐都西路867-871号"},
-                           {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},
-                           {"name":"孙伟","tel":"161*****0097","hobby":"钢琴、书法、唱歌","address":"上海市崇明县城桥镇八一路739号"},
-                           {"name":"周伟","tel":"197*****1123","hobby":"钢琴、书法、唱歌","address":"上海市青浦区青浦镇章浜路24号"},
-                           {"name":"吴伟","tel":"183*****6678","hobby":"钢琴、书法、唱歌","address":"上海市松江区乐都西路867-871号"},
-                            {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼"},
-                           {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},
-                           {"name":"孙伟","tel":"161*****0097","hobby":"钢琴、书法、唱歌","address":"上海市崇明县城桥镇八一路739号"},
-                           {"name":"周伟","tel":"197*****1123","hobby":"钢琴、书法、唱歌","address":"上海市青浦区青浦镇章浜路24号"},
-                           {"name":"吴伟","tel":"183*****6678","hobby":"钢琴、书法、唱歌","address":"上海市松江区乐都西路867-871号"},
-                           {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},
-                           {"name":"孙伟","tel":"161*****0097","hobby":"钢琴、书法、唱歌","address":"上海市崇明县城桥镇八一路739号"},
-                           {"name":"周伟","tel":"197*****1123","hobby":"钢琴、书法、唱歌","address":"上海市青浦区青浦镇章浜路24号"},
-                           {"name":"吴伟","tel":"183*****6678","hobby":"钢琴、书法、唱歌","address":"上海市松江区乐都西路867-871号"},
-                            {"name":"赵伟","tel":"156*****1987","hobby":"钢琴、书法、唱歌","address":"上海市黄浦区金陵东路569号17楼"},
-                           {"name":"李伟","tel":"182*****1538","hobby":"钢琴、书法、唱歌","address":"上海市奉贤区南桥镇立新路12号2楼"},
-                           {"name":"孙伟","tel":"161*****0097","hobby":"钢琴、书法、唱歌","address":"上海市崇明县城桥镇八一路739号"},
-                           {"name":"周伟","tel":"197*****1123","hobby":"钢琴、书法、唱歌","address":"上海市青浦区青浦镇章浜路24号"},
-                           {"name":"吴伟","tel":"183*****6678","hobby":"钢琴、书法、唱歌","address":"上海市松江区乐都西路867-871号"}
-                    ],
-                    columns: [
-                           {field: 'name', title:'姓名', width: 150, titleAlign: 'center',columnAlign:'center', isFrozen: true},
-                           {field: 'tel', title: '手机号码', width: 280, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'hobby', title: '爱好', width: 380, titleAlign: 'center',columnAlign:'center',isResize:true},
-                           {field: 'address', title: '地址', width: 430, titleAlign: 'center',columnAlign:'left',isResize:true}
-                    ]
+      tabheight:document.documentElement.clientHeight-135
+     ,tabht:document.documentElement.clientHeight-135
+     ,subleftw:""
+     ,rightNavArray:[{name:"高级检索",url:"/GmData/Gjjs"},{name:"我的产品池",url:"/GmData/Wdcpc"},{name:"对比库",url:"/GmData/Dbk"},{name:"产品快速预览",url:"/GmData/Cpksyl"},]
+
           }
   }
  ,components:{
       Slide,Search
     }
-  ,computed:mapGetters(['count','getOdd','subsnump'])
+  ,computed:mapGetters(['searchJSON','count','getOdd','subsnump'])
   // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd:","clickAsync"])放在当前的
   ,methods:{
     clickOdd:function(){
       this.$store.dispatch("clickOdd");
+    }
+    ,gsjcfn:function(row, column, cell, event){
+      console.log(row.number)
+      console.log(column.label)
+      if(column.label=="公司简称"){
+        this.$router.push('/CompenyDetial')
+      }
+       if(column.label=="注册资本(万)"){
+        this.$router.push('/CompenyDetial/'+row.number);
+      }
     }
   }
   ,mounted: function () {
@@ -95,8 +149,11 @@ export default {
       }
     }*/
   ,created(){
+    let that=this;
+    this.$store.dispatch("getSubLeftw").then(function (getWidth) {
+      that.subleftw=getWidth;
+    });
 
-//this.$store.dispatch('clickOdd')
   }
 }
 </script>
@@ -110,7 +167,7 @@ export default {
 
 
 .main{margin-left:220px; margin-top:0px;}
-#subleftContent{ background-color:#fff}
+/* #subleftContent{ background-color:#fff}
 
 .main .mainlist {overflow:hidden}
 .main .mainlist #subleftContent{
@@ -127,5 +184,5 @@ export default {
     background-color:#fff;
         vertical-align: top;
 }
-.main .mainlist{display: table; width:100%}
+.main .mainlist{display: table; width:100%} */
 </style>
