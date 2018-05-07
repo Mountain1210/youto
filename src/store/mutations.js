@@ -11,11 +11,14 @@ import {
     GETTABLEDATA,
     GETGJJS,
     ISOPEN,
-    CLOSEDIOAG
+    CLOSEDIOAG,
+    SUBLEFTW
 } from './type'
 import Vue from 'vue'
 
-
+/**
+ * state不适合存储dom上的数据,应该存储状态上的数据
+ */
 
 const state = {
     dialogVisible:false,
@@ -275,9 +278,12 @@ const mutations = {
     },
      [ISOPEN](state,flag){
         state.dialogVisible=flag
+     },
+
+  [SUBLEFTW](state){
+        state.subleftw=document.body.offsetWidth-628+"px";
+        console.log(state.subleftw);
      }
-
-
 
 
 
@@ -336,6 +342,9 @@ const getters = {
     }
     ,tabheight:(state)=>{
         return state.tabheight;
+    }
+    ,SUBLEFTW:(state)=>{
+        return state.subleftw;
     }
 
 };

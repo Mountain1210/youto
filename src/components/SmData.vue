@@ -1,11 +1,11 @@
 <template>
 <div class="main">
 
-<div class="mainlist">
-<div id="subleftContent">
-<div class="func">
-<el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button>
-<el-dialog
+<div class="mainlist" id="mainContent">
+<div id="subleftContent" :style="{width:subleftw}">
+<div class="func" id="fnc">
+<!-- <el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button> -->
+<!-- <el-dialog
   title="提示"
   :visible.sync="dialogVisible"
   width="75%"
@@ -16,10 +16,10 @@
     <el-button @click="isopen(0)">取 消</el-button>
     <el-button type="primary" @click="isopen(2)">确 定</el-button>
   </span>
-</el-dialog>
+</el-dialog> -->
 <Search></Search>
 <div class="showmap" ><span class="iconfont icon-earth"></span><div class="maptxt">查看公司布图</div></div>
-<div style="display:inline;float:left; padding-top:2px; margin-left:16px"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div>
+<!-- <div style="display:inline;float:left; padding-top:2px; margin-left:16px"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div> -->
 <div class="sf" style="float:right; padding-right:8px; font-size:18px">
 <span class="iconfont icon-category"></span>
 <span class="iconfont icon-emailfilling" style="color:rgba(79, 159, 222, 1)"></span>
@@ -36,14 +36,14 @@
                  @on-custom-comp="customCompFunc"
                  ></v-table> -->
 
-<div style="width:99.9%;  max-width:1200px">
+<div>
   <el-table
     :data="searchJSON.tableData"
     stripe
     align="left"
     @cell-click="gsjcfn"
     :max-height="tabheight"
-    :style='{width:"auto"}'>
+   >
 
     <el-table-column
       prop="number"
@@ -131,20 +131,20 @@ import Vue from 'vue'
 import {mapGetters,mapActions} from "vuex"
 import Slide from "./slide.vue"
 import Search from "./search.vue"
-
 export default {
   name: 'SmData',
   data () {
     return {
      rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"}]
-     ,tabheight:document.documentElement.clientHeight-145
-     ,tabht:document.documentElement.clientHeight-145
+     ,tabheight:document.documentElement.clientHeight-135
+     ,tabht:document.documentElement.clientHeight-135
+     ,subleftw:""
      }
   }
- ,components:{
+  ,components:{
       Slide,Search
     }
-  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible','tabheight'])
+  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
   // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
   ,methods:{
     sublibtn:function(){
@@ -163,44 +163,34 @@ export default {
       console.log(row.number)
       console.log(column.label)
       if(column.label=="公司简称"){
-        // this.$router.push('/Urltabview/'+row.number)
         this.$router.push('/CompenyDetial')
       }
-       if(column.label=="注册资本(万)"){
-        this.$router.push('/CompenyDetial/'+row.number)
-        // this.$router.push('/Urltabview')
+      if(column.label=="注册资本(万)"){
+        this.$router.push('/CompenyDetial/'+row.number);
       }
     }
+  }
+  ,beforeCreate:function(){
+
   }
   ,mounted: function () {
     this.getdocumentHeight();
   }
   ,created(){
+    let that=this;
+    this.$store.dispatch("getSubLeftw").then(function (getWidth) {
+      that.subleftw=getWidth;
+    });
 
   }
 }
 </script>
 
 <style scoped>
-
-.func{overflow:hidden; background-color:#fff; padding:10px; margin-top:5px}
+.func{overflow:hidden; background-color:#fff; padding:10px; margin-top:5px; border-bottom:2px solid #f0f0f0;}
 .sf .iconfont{padding-right:8px}
 .showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
 .showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
-.main{margin-left:220px; margin-top:0px;}
-#subleftContent{ background-color:#fff}
-.main .mainlist {overflow:hidden}
-.main .mainlist #subleftContent{
-    width:800px;
-    display: table-cell;
-}
-.main .mainlist #subrightContent{
-    display: table-cell;
-    width:34.8%;
-    min-width:350px;
-    border-left:1px solid #ccc;
-    background-color:#fff;
-    vertical-align: top;
-}
-.main .mainlist{display: table; width:100%}
+
+
 </style>

@@ -39,6 +39,12 @@ Vue.use(Vuex)
      }
 }*/
 export default {
+    subleftw:({
+        commit,
+        state
+    }, index)=>{
+        commit(types.SUBLEFTW, index)
+    },
     sublibtn: ({
         commit,
         state
@@ -49,7 +55,6 @@ export default {
         commit,
         state
     }, num) => {
-
         if (num == 1) {
             commit(types.ISOPEN, true)
         } else if (num == 2) {
@@ -93,6 +98,10 @@ export default {
 
     getdocumentHeight() {
         document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
+    },
+     getSubLeftw() { 
+        var maxwidth=document.body.offsetWidth-640+"px";
+        return maxwidth;
     },
     lstfunc: ({
         commit,
