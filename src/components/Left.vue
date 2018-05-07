@@ -24,10 +24,10 @@ export default {
   },
   mounted: function () {
     this.getdocumentLeftHeight();
-     this.getdocumentHeight();     
+    // this.getdocumentHeight();     
      
-    },
-    watch:{
+  },
+  watch:{
       $route(to){
         var path=to.path.substring(1);        
         path=path.split("/");
