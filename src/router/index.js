@@ -10,6 +10,7 @@ import Detial from '@/components/detial'
 import Urltabview from '@/components/Urltabview'
 
 import CompenyDetial from '@/components/compenyDetial'
+import Register from '@/components/register'
 
 
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/Urltabview',
       name: 'Urltabview',
       component: Urltabview
+    },
+     {
+      path: '/Register',
+      name: 'Register',
+      component: Register
     },
     {
 

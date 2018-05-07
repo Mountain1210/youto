@@ -144,7 +144,7 @@ export default {
   ,components:{
       Slide,Search
     }
-  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible','tabheight','subleftw'])
+  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
   // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
   ,methods:{
     sublibtn:function(){
@@ -165,7 +165,7 @@ export default {
       if(column.label=="公司简称"){
         this.$router.push('/CompenyDetial')
       }
-       if(column.label=="注册资本(万)"){
+      if(column.label=="注册资本(万)"){
         this.$router.push('/CompenyDetial/'+row.number);
       }
     }
