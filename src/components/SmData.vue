@@ -4,8 +4,8 @@
 <div class="mainlist" id="mainContent">
 <div id="subleftContent" :style="{width:subleftw}">
 <div class="func" id="fnc">
-<!-- <el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button> -->
-<!-- <el-dialog
+<el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button>
+<el-dialog
   title="提示"
   :visible.sync="dialogVisible"
   width="75%"
@@ -16,7 +16,7 @@
     <el-button @click="isopen(0)">取 消</el-button>
     <el-button type="primary" @click="isopen(2)">确 定</el-button>
   </span>
-</el-dialog> -->
+</el-dialog>
 <Search></Search>
 <div class="showmap" ><span class="iconfont icon-earth"></span><div class="maptxt">查看公司布图</div></div>
 <!-- <div style="display:inline;float:left; padding-top:2px; margin-left:16px"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div> -->
