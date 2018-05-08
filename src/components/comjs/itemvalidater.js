@@ -4,7 +4,7 @@
  * @date    2018-05-08 14:55:35
  * @version 0.0.1
  */
- import _ from 'lodash'
+import _ from 'lodash'
 class Itemvalidater{
     constructor(props){}
     checkPhone(rule,value,callback){
@@ -44,5 +44,5 @@ class Itemvalidater{
             }, 1000);
     }
  };
-let Itd=new Itemvalidater();
-export default Itd
+
+export default new Itemvalidater()
