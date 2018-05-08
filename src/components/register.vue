@@ -35,8 +35,6 @@ import Vue from 'vue'
 import {mapGetters,mapActions} from "vuex"
 import _ from 'lodash'
 import Itd from './comjs/itemvalidater'
-// var Itd=new Itemvalidater();
-
 export default {
   name: 'Register',
   data () { 
