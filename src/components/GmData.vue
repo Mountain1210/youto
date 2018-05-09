@@ -6,7 +6,7 @@
 <div class="func">
 <Search></Search>
 <div class="showmap" ><span class="iconfont icon-earth"></span><div class="maptxt">查看公司布图</div></div>
-<div style="display:inline;float:left; padding-top:2px; margin-left:16px"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div>
+<div class="marqueecla"><marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee></div>
 <div class="sf" style="float:right; padding-right:8px; font-size:18px">
 <span class="iconfont icon-category"></span>
 <span class="iconfont icon-emailfilling" style="color:rgba(79, 159, 222, 1)"></span>
