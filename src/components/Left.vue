@@ -59,6 +59,6 @@ export default {
 .messageContent li{float:left; margin-right:24px}
 .messageContent li span:before{ font-size:21px; margin-top:8px}
 .messageContent .question{border-radius:4px; background-color:#57b0e6; font-size:14px; padding:4px 8px}
-.messageContent .message{padding-top: 3px;}k
+.messageContent .message{padding-top: 3px;}
 .messageContent .person{margin-right:12px;padding-top: 3px;}
 </style>

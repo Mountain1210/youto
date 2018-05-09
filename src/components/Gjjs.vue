@@ -4,6 +4,7 @@
     <span class="demonstration">成立时间:</span>
     <el-date-picker
       v-model="value0"
+      size="small"
       type="datetimerange"
       range-separator="至"
       start-placeholder="开始日期"
@@ -12,8 +13,9 @@
 </li>
 <li>
 <span class="demonstration">投资策略:</span>
-  <el-select v-model="value1" placeholder="请选择">
+  <el-select v-model="value1" size="small" placeholder="请选择">
     <el-option
+      
       v-for="item in options"
       :key="item.value"
       :label="item.label"
@@ -23,8 +25,9 @@
 </li>
 <li>
 <span class="demonstration">通道类型:</span>
-<el-select v-model="value2" placeholder="请选择">
+<el-select size="small" v-model="value2" placeholder="请选择">
     <el-option
+    
       v-for="item in options2"
       :key="item.value"
       :label="item.label"
@@ -34,8 +37,9 @@
 </li>
 <li>
 <span class="demonstration">存续周期:</span>
-<el-select v-model="value3" placeholder="请选择">
+<el-select size="small" v-model="value3" placeholder="请选择">
     <el-option
+    
       v-for="item in options3"
       :key="item.value"
       :label="item.label"
@@ -45,7 +49,7 @@
 </li>
 <li>
 <span class="demonstration">净值更新频率:</span>
-<el-radio-group v-model="radio3">
+<el-radio-group v-model="radio3" size="small">
       <el-radio-button label="日"></el-radio-button>
       <el-radio-button label="周"></el-radio-button>
       <el-radio-button label="月"></el-radio-button>
@@ -55,7 +59,7 @@
 <li>
 <span class="demonstration">统计指标:</span>
 <div class="tjzb" style="width:80px; display:inline-block">
-<el-select v-model="value4" placeholder="请选择">
+<el-select v-model="value4" placeholder="请选择" size="small">
     <el-option
       v-for="item in options4"
       :key="item.value"
@@ -65,14 +69,14 @@
   </el-select>
   </div>
   <div class="tjzb" style="width:70px; display:inline-block; margin-left:20px">
-<el-input
+<el-input size="small"
   placeholder="请输入内容"
   v-model="input10"
   clearable>
 </el-input>
   </div>
   <div class="tjzb" style="width:70px; display:inline-block; margin-left:5px">
-<el-input
+<el-input size="small"
   placeholder="请输入内容"
   v-model="input10"
   clearable>
@@ -82,7 +86,7 @@
 <li>
 <span class="demonstration">　　　　</span>
 <div class="tjzb" style="width:80px; display:inline-block">
-<el-select v-model="value5" placeholder="请选择">
+<el-select v-model="value5" placeholder="请选择" size="small">
     <el-option
       v-for="item in options4"
       :key="item.value"
@@ -92,14 +96,14 @@
   </el-select>
   </div>
   <div class="tjzb" style="width:70px; display:inline-block; margin-left:20px">
-<el-input
+<el-input size="small"
   placeholder="请输入内容"
   v-model="input10"
   clearable>
 </el-input>
   </div>
   <div class="tjzb" style="width:70px; display:inline-block; margin-left:5px">
-<el-input
+<el-input size="small"
   placeholder="请输入内容"
   v-model="input10"
   clearable>
@@ -109,8 +113,8 @@
 <li>
 <span class="demonstration">　　　　</span>
 <div class="tjzb" style="width:80px; display:inline-block">
-<el-select v-model="value6" placeholder="请选择">
-    <el-option
+<el-select v-model="value6" placeholder="请选择" size="small">
+    <el-option 
       v-for="item in options4"
       :key="item.value"
       :label="item.label"
@@ -119,14 +123,14 @@
   </el-select>
   </div>
   <div class="tjzb" style="width:70px; display:inline-block; margin-left:20px">
-<el-input
+<el-input size="small"
   placeholder="请输入内容"
   v-model="input10"
   clearable>
 </el-input>
   </div>
   <div class="tjzb" style="width:70px; display:inline-block; margin-left:5px">
-<el-input
+<el-input size="small"
   placeholder="请输入内容"
   v-model="input10"
   clearable>
@@ -161,7 +165,7 @@
   </div>
 </li>
 
-<li style="padding:24px 0 0 105px"><el-button type="primary" @click="getGjjsbtn">主要按钮</el-button>  <el-button type="info" >信息按钮</el-button></li>
+<li style="padding:24px 0 0 105px"><el-button type="primary" size="small" @click="getGjjsbtn">主要按钮</el-button>  <el-button size="small" type="info" >信息按钮</el-button></li>
 </ul>
 
 

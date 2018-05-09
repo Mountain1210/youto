@@ -1,6 +1,6 @@
 <style scoped>
 .detialContent{
-	margin-left: 220px;
+	margin-left: 160px;
 	background-color: #fff;
 	padding:24px;
 }

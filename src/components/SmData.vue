@@ -41,6 +41,7 @@
     :data="searchJSON.tableData"
     stripe
     align="left"
+    :height="tabheight"
     @cell-click="gsjcfn"
     :max-height="tabheight"
    >
@@ -136,8 +137,8 @@ export default {
   data () {
     return {
      rightNavArray:[{name:"高级检索",url:"/SmData/Gjjs"},{name:"我的产品池",url:"/SmData/Wdcpc"},{name:"对比库",url:"/SmData/Dbk"},{name:"产品快速预览",url:"/SmData/Cpksyl"}]
-     ,tabheight:document.documentElement.clientHeight-135
-     ,tabht:document.documentElement.clientHeight-135
+     ,tabheight:document.documentElement.clientHeight-125
+     ,tabht:document.documentElement.clientHeight-125
      ,subleftw:""
      }
   }
@@ -181,16 +182,10 @@ export default {
     this.$store.dispatch("getSubLeftw").then(function (getWidth) {
       that.subleftw=getWidth;
     });
-
   }
 }
 </script>
 
 <style scoped>
-.func{overflow:hidden; background-color:#fff; padding:10px; margin-top:5px; border-bottom:2px solid #f0f0f0;}
 .sf .iconfont{padding-right:8px}
-.showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
-.showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
-
-
 </style>

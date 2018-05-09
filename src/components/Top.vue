@@ -21,7 +21,7 @@ export default {
   name: 'Top',
   data () {
     return {
-      logo: '牛牛牛分析平台',
+      logo: '量牛分析',
       // navArray:[{name:'私幕数据',url:"/SmData"},{name:'公幕数据',url:"/GmData"},{name:'评分排名',url:'/main'},{name:'研究分析',url:'/detial'},{name:'组合管理',url:'/zhgl'},{name:'我的工作区',url:'/myww'}]
       navArray:[{name:'私幕数据',url:"/SmData"},{name:'公幕数据',url:"/GmData"},{name:'评分排名',url:'/main'},{name:'研究分析',url:'/detial'},{name:'组合管理',url:'/register'},{name:'我的工作区',url:'/myww'}]
     }

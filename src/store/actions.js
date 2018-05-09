@@ -100,7 +100,7 @@ export default {
         document.getElementById("subrightContent").style.height = document.documentElement.clientHeight - 80 + "px";
     },
      getSubLeftw() { 
-        var maxwidth=document.body.offsetWidth-640+"px";
+        var maxwidth=document.body.offsetWidth-580+"px";
         return maxwidth;
     },
     lstfunc: ({

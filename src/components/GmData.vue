@@ -20,6 +20,7 @@
     stripe
     align="left"
     @cell-click="gsjcfn"
+    :height="tabheight"
     :max-height="tabheight"
    >
 
@@ -112,7 +113,7 @@ export default {
   name: 'GmData',
   data () {
     return {
-      tabheight:document.documentElement.clientHeight-135
+     tabheight:document.documentElement.clientHeight-125
      ,tabht:document.documentElement.clientHeight-135
      ,subleftw:""
      ,rightNavArray:[{name:"高级检索",url:"/GmData/Gjjs"},{name:"我的产品池",url:"/GmData/Wdcpc"},{name:"对比库",url:"/GmData/Dbk"},{name:"产品快速预览",url:"/GmData/Cpksyl"},]
@@ -159,30 +160,7 @@ export default {
 </script>
 
 <style scoped>
-
-.func{overflow:hidden; background-color:#fff; padding:10px; margin-top:5px}
 .sf .iconfont{padding-right:8px}
-.showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
-.showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
+.main{margin-left:160px; margin-top:0px;}
 
-
-.main{margin-left:220px; margin-top:0px;}
-/* #subleftContent{ background-color:#fff}
-
-.main .mainlist {overflow:hidden}
-.main .mainlist #subleftContent{
-    float:left;
-    width:100%;
-    display: table-cell;
-}
-
-.main .mainlist #subrightContent{
-    display: table-cell;
-    width:34.8%;
-    min-width:350px;
-    border-left:1px solid #ccc;
-    background-color:#fff;
-        vertical-align: top;
-}
-.main .mainlist{display: table; width:100%} */
 </style>

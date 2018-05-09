@@ -305,7 +305,7 @@ a:focus,
 {
     font-size: 14px;
 
-    width: 220px;
+    width: 160px;
     padding: 25px 0;
 
     color: #fff;
@@ -325,7 +325,7 @@ a:focus,
 
 /*Ò³Ãæ*/
 
-.main{margin-left:220px; margin-top:0px;}
+.main{margin-left:160px; margin-top:0px;}
 .main .mainlist #subleftContent{ background-color:#fff; float:left;}
 .main .mainlist {overflow:hidden}
 .main .mainlist #subrightContent{
@@ -335,3 +335,7 @@ a:focus,
     vertical-align: top;
     width: 420px!important;
 }
+.func .el-input-group__append{background-color: rgba(79, 159, 222, 1); border-radius: 0 4px 4px 0; border:1px solid #23A3DBFF; border-left: none}
+.showmap{float:left; padding:6px 8px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; margin-top: 2px; }
+.showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
+.func{overflow:hidden; background-color:#fff; padding:4px 10px; margin-top:2px}

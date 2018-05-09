@@ -13,13 +13,13 @@
 <span></span>
 </div>
 </div>
-<div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>
+<!-- <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div> -->
 <v-table is-horizontal-resize
-                 style="width:100%"
-                 :columns="columns"
-                 is-vertical-resize=true
-                 :table-data="tableData">
-        </v-table>
+         style="width:100%"
+         :columns="columns"
+         is-vertical-resize=true
+         :table-data="tableData">
+</v-table>
 </div>
 <div id="subrightContent">
 <Slide :sublistArray="rightNavArray"  @li="sublibtn($event)" :subsnum="subsnump"></Slide>
@@ -94,25 +94,17 @@ export default {
 </script>
 
 <style scoped>
-
-.func{overflow:hidden; background-color:#fff; padding:10px; margin-top:5px}
 .sf .iconfont{padding-right:8px}
-.showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
-.showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
-
-
-.main{margin-left:220px; margin-top:0px;}
 #subleftContent{ background-color:#fff}
-
 .main .mainlist {overflow:hidden}
 .main .mainlist #subleftContent{
     float:left;
     width:100%;
-    display: table-cell;
+
 }
 
 .main .mainlist #subrightContent{
-    display: table-cell;
+
     width:34.8%;
     min-width:350px;
     border-left:1px solid #ccc;
