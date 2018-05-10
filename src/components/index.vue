@@ -1,8 +1,9 @@
 <template>
 <div class="main">
 <div class="mainlist">
-<div class="func " style="background-color:#fff"><Search></Search></div>
-<div id="subleftContent">
+
+<div id="subleftContent" :style="{width:subleftw}">
+  <div class="func "><Search></Search></div>
 <div class="kuaiMain">
   <ul class="indexul">
     <li>
@@ -76,21 +77,27 @@ export default{
       name: 'Index',
       data () {
         return {
-
+          subleftw:""
         }
 
      },
      components:{
        Search,Inxone
     }
-      ,computed:mapGetters(['count','getOdd','subsnump'])
-  ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync"])
+  ,computed:mapGetters(['count','getOdd','subsnump'])
+  ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync",])
   ,mounted: function () {this.getdocumentHeight();}
   ,watch:{
       $route(to){
         var path=to.path.substring(1);
       }
     }
+  ,created(){
+    let that=this;
+    this.$store.dispatch("getSubLeftw").then(function (getWidth) {
+      that.subleftw=getWidth;
+    });
+  }
 }
 </script>
 
@@ -100,27 +107,9 @@ export default{
 .kuaiMain .indexul li{width:50%; float: left;}
 .kuaiMain .indexul li img{float:left; width:100px; height: 100px}
 .kuaiMain .indexul li dt{font-size:14px; font-weight: bold}
-.func{overflow:hidden; background-color:#fff; padding:10px; border-bottom:2px solid #f0f0f0;}
 .sf .iconfont{padding-right:8px}
 .showmap{float:left; padding:3px 4px 2px 4px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; }
 .showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
-.main{margin-left:160px; margin-top:0px;}
-#subleftContent{ background-color:#fff}
-.main .mainlist {overflow:hidden}
-.main .mainlist #subleftContent{
-    float:left;
-    width: 65%
-}
 
-.main .mainlist #subrightContent{
-    float: right;
-    width:34.8%;
-    min-width:350px;
-    border-left:1px solid #ccc;
-    background-color:#fff;
-    vertical-align: top;
-}
-.main .mainlist{display: table; width:100%}
-#subrightContent{background-color:#fff}
-.mainlist{background-color:#fff}
+
 </style>

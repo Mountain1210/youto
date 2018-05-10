@@ -152,7 +152,7 @@ border-bottom: 1px solid #f6f6f6;
 					</dl>
 					<dl>
 						<dt>净值曲线</dt>
-						<dd><div id="myChart" :style="{width: '100%', height: '240px'}" class="paddinglr24"></div></dd>
+						<dd><div id="myChart" :style="{height: '240px'}" class="paddinglr24"></div></dd>
 					</dl>
 				</div>
 

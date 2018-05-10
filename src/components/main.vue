@@ -127,6 +127,27 @@ export default {
   // ,computed:mapGetters(['count','getOdd','subsnump'])
   // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync"])
   ,mounted: function () {this.getdocumentHeight();this.getcurrentMenu();}
+  ,methods:{
+    clickOdd:function(){
+      this.$store.dispatch("clickOdd");
+    }
+    ,gsjcfn:function(row, column, cell, event){
+      console.log(row.number)
+      console.log(column.label)
+      if(column.label=="公司简称"){
+        this.$router.push('/CompenyDetial')
+      }
+       if(column.label=="注册资本(万)"){
+        this.$router.push('/CompenyDetial/'+row.number);
+      }
+    }
+    ,getdocumentHeight:function(){
+      this.$store.dispatch("getdocumentHeight")
+    }
+    ,getcurrentMenu:function(){
+      this.$store.dispatch("getcurrentMenu")
+    }
+  }
   ,watch:{
       $route(to){
         var path=to.path.substring(1);

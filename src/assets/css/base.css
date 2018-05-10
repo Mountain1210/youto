@@ -327,9 +327,9 @@ a:focus,
 
 .main{margin-left:160px; margin-top:0px;}
 .main .mainlist #subleftContent{ background-color:#fff; float:left;}
-.main .mainlist {overflow:hidden}
+.main .mainlist {overflow:hidden;background-color:#fff}
 .main .mainlist #subrightContent{
-  float: right;
+    float: right;
     border-left:1px solid #ccc;
     background-color:#fff;
     vertical-align: top;
@@ -340,3 +340,5 @@ a:focus,
 .showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
 .func{overflow:hidden; border-bottom:1px solid #f0f0f0; background-color:#fff; padding:4px 10px; margin-top:2px}
 .marqueecla{display:inline;float:left; padding-top:2px; margin-left:16px; padding-top:8px;}
+.main .mainlist{width:100%}
+.scrollContent{/*min-height:800px; height:900px; */overflow:scroll; overflow-y:auto;overflow-y: auto;overflow-x: hidden; }
