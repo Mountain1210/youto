@@ -12,6 +12,7 @@ import Urltabview from '@/components/Urltabview'
 import CompenyDetial from '@/components/compenyDetial'
 import Register from '@/components/register'
 import Diff from '@/components/diff'
+import Difftablist from '@/components/unit/difftablist'
 
 
 
@@ -30,8 +31,16 @@ export default new Router({
     {
       path: '/Diff',
       name: 'Diff',
-      component: Diff
+      component: Diff,
+      children: [
+        {
+            path: '/Diff/difftablist',
+            name: 'Difftablist',
+            component: Difftablist,
+        }
+      ]
     },
+
      {
       path: '/Urltabview',
       name: 'Urltabview',

@@ -4,7 +4,7 @@
 
 <div id="subleftContent" :style="{width:subleftw,height:tabheight}">  
   <div class="func "><Search></Search><FuncbtnTime></FuncbtnTime></div>
-  <div id="diffContent" class="scrollContent" :style="{width:subleftws,height:tabheight}">
+  <div id="diffContent" class="scrollContent" :style="{width:subleftws,height:tabsubheight}">
     <div class="diffMain">
       <Echart  :ArrayData='["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]' :NumData='[5, 20, 36, 10, 10, 20]'></Echart>
       <Difftable></Difftable>
@@ -14,7 +14,7 @@
   </div>
 </div>
 <div id="subrightContent">
-
+<Slide :sublistArray="rightNavArray"  @li="sublibtn($event)" :subsnum="subsnump"></Slide>
 </div>
 </div>
 </div>
@@ -30,18 +30,22 @@ import Search from "./search.vue"
 import FuncbtnTime from "./unit/FuncbtnTime.vue"
 import Echart from "./unit/echart.vue"
 import Difftable from "./unit/difftable.vue"
+import Slide from "./slide.vue"
+import Difftablist from "./unit/difftablist.vue"
 export default{
       name: 'Diff',
       data () {
         return {
            subleftw:""
           ,subleftws:""
-          ,tabheight:(parseInt(document.documentElement.clientHeight))-125+"px"
+          ,tabsubheight:(parseInt(document.documentElement.clientHeight))-130+"px"
+          ,tabheight:(parseInt(document.documentElement.clientHeight))-85+"px"
+          ,rightNavArray:[{name:"我产品池",url:"/diff/difftablist"},{name:"对比库",url:"Dbk"}]
         }
 
      },
      components:{
-       Search,FuncbtnTime,Echart,Difftable
+       Search,FuncbtnTime,Echart,Difftable,Slide
     }
   ,mounted: function () {this.$store.dispatch("getdocumentHeight");}
   ,methods:{
