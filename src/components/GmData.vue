@@ -129,17 +129,17 @@ export default {
     clickOdd:function(){
       this.$store.dispatch("clickOdd");
     }
-    ,gsjcfn:function(row, column, cell, event){
-      console.log(row.number)
-      console.log(column.label)
-      if(column.label=="公司简称"){
-        this.$router.push('/CompenyDetial')
-      }
-       if(column.label=="注册资本(万)"){
-        this.$router.push('/CompenyDetial/'+row.number);
-      }
+    ,gsjcfn: function(row, column, cell, event) {
+            console.log(row.number)
+            console.log(column.label)
+            if (column.label == "公司简称") {
+                this.$router.push('/GmData/detial/'+ row.number)
+            }
+            if (column.label == "注册资本(万)") {
+                this.$router.push('/CompenyDetial/' + row.number);
+            }
+        }
     }
-  }
   ,mounted: function () {
     this.$store.dispatch("getdocumentHeight");//这里可以用dispatch来触发action中的方法
   }
