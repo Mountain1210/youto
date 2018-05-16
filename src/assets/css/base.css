@@ -314,7 +314,7 @@ a:focus,
 
 #leftContent li
 {
-    padding: 8px;
+    padding: 12px 8px;
 }
 
 #leftContent li span:before

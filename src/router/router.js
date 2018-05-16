@@ -10,6 +10,8 @@ import HelloWorld from '@/components/HelloWorld'
 import CompenyDetial from '@/components/compenyDetial'
 import Register from '@/components/register'
 import Diff from '@/components/diff'
+import SmProdata from '@/components/SmProdata'
+
 import Difftablist from '@/components/unit/difftablist'
 export default [
                   {
@@ -46,6 +48,7 @@ export default [
                     component: Register
                   }
                   ,{
+                    
 
                     path: '/CompenyDetial/:id',
                     name: 'CompenyDetial',
@@ -89,6 +92,11 @@ export default [
                     path: '/SmData/detial/:id',
                     name: 'Detial',
                     component: Detial,
+                  }
+                  ,{
+                    path: '/SmProdata',
+                    name: 'SmProdata',
+                    component: SmProdata
                   }
                   ,{
                     path: '/main',

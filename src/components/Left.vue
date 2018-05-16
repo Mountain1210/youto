@@ -1,7 +1,7 @@
 <template>
   <div id="leftContent">
       <ul id="leftmenu">
-        <router-link :to="item.name" tag="li" active-class="active" v-for="item in submenu.subMenuu" >
+        <router-link :to="item.url" tag="li" active-class="active" v-for="item in submenu.subMenuu" >
                 {{item.name}}
         </router-link>
       </ul>
@@ -33,9 +33,11 @@ export default {
         path=path.split("/");
         console.log(path[0])
         if(path[0]==""){
+          // alert(2)
            this.$store.dispatch("getcurrentMenu","/");
             return
         }else{
+          // alert(1)
             this.$store.dispatch("getcurrentMenu",path[0])
         }
       }
@@ -49,6 +51,8 @@ export default {
 </script>
 <style scoped>
 #leftContent{float:left;}
+#leftContent li{cursor: pointer;}
+#leftContent .active{background-color: #fff; color:#000;}
 .topContent{background-color:rgba(79, 159, 222, 1); overflow:hidden; position: relative;}
 .topContent .logo{color:#fff; font-size:24px; padding:24px; padding-right:auto; float:left}
 .topContent .navul{color:#fff; position: absolute; bottom:-5px; left:280px}
