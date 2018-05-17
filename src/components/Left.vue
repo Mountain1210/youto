@@ -1,7 +1,7 @@
 <template>
   <div id="leftContent">
       <ul id="leftmenu">
-        <router-link :to="item.name" tag="li" active-class="active" v-for="item in submenu.subMenuu" >
+        <router-link :to="item.url" tag="li" active-class="active" v-for="item in submenu.subMenuu" >
                 {{item.name}}
         </router-link>
       </ul>
@@ -19,7 +19,8 @@ export default {
   },
   beforeMount:function(){
    var allcurrenturl=localStorage.getItem("currentUrl");
-   var obj=JSON.parse(allcurrenturl);
+   allcurrenturl=JSON.stringify(allcurrenturl)
+   var obj=eval(allcurrenturl);
    this.lstfunc(obj);  
   },
   mounted: function () {
@@ -28,6 +29,7 @@ export default {
      
   },
   watch:{
+
       $route(to){
         var path=to.path.substring(1);        
         path=path.split("/");
@@ -43,12 +45,31 @@ export default {
     ,computed:mapGetters(['count','getOdd','subsnump','submenu'])
     ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","lstfunc","getdocumentLeftHeight"])
   ,created(){
-   
   }
 }
+
+            // ,{
+                  //   path: '/SM/SmData',
+                  //   name: 'SmData',
+                  //   component: SmData,
+                  //    children: [
+                  //     ,{
+                  //         path: '/SM/SmData/Gjjs',
+                  //         name: 'Gjjs',
+                  //         component: Gjjs,
+                  //     }
+                  //     ,{
+                  //         path: '/SmData',
+                  //         redirect: 'Gjjs'
+                  //     }
+                      
+                  //   ]
+                  // }
 </script>
 <style scoped>
 #leftContent{float:left;}
+#leftContent li{cursor: pointer;}
+#leftContent .active{background-color: #fff; color:#000;}
 .topContent{background-color:rgba(79, 159, 222, 1); overflow:hidden; position: relative;}
 .topContent .logo{color:#fff; font-size:24px; padding:24px; padding-right:auto; float:left}
 .topContent .navul{color:#fff; position: absolute; bottom:-5px; left:280px}

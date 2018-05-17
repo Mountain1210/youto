@@ -125,7 +125,12 @@ export default {
                 url: '/static/data/menuData/MenuData.html'
             }).then(function(res) {
                 let sightdata = null;
-                res.data.forEach(function(item, index) {
+                console.log(res.data.length)
+                // let resolt=eval(res.data)
+                let resoltdata=JSON.stringify(res.data)
+                let resolt=eval(res.data)
+                console.log(resolt)
+                resolt.forEach(function(item, index) {
                     if (path.indexOf(item.name) != -1) {
                         console.log(item)
                         commit(types.GETSECONDMENU, item)

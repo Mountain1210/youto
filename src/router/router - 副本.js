@@ -10,66 +10,12 @@ import HelloWorld from '@/components/HelloWorld'
 import CompenyDetial from '@/components/compenyDetial'
 import Register from '@/components/register'
 import Diff from '@/components/diff'
-import SmProdata from '@/components/SmProdata'
-import SM from '@/components/Sm'
-import GM from '@/components/Gm'
-
 import Difftablist from '@/components/unit/difftablist'
 export default [
-                ,{
-                             path: '/SM',
-                             redirect: '/SM/SmData/Gjjs'
-                  }
-                  ,{
-                    path: '/SM',
-                    name: 'Sm',
-                    component: SM,
-                    children:[
-                      {
-                          path: '/SM/SmProdata',
-                          name: 'SmProdata',
-                          component: SmProdata,
-                          children: [
-                            
-                            
-                          ]
-                      }
-                      ,{
-                          path: '/SM/SmData',
-                          name: 'SmData',
-                          component: SmData,
-                          children: [
-                            {
-                              path: '/SM/SmData/Gjjs',
-                              name: 'Gjjs',
-                              component: Gjjs
-                            }
-                            
-                          ]
-                      } 
-                    ]
-                  }
-                 
-                   ,{
-                    path: '/GM',
-                    name: 'GM',
-                    component: GM,
-                    children:[
-                      {
-                          path: '/GM/GmData',
-                          name: 'GmData',
-                          component: GmData,
-                          children: [
-                            
-                            
-                          ]
-                      }
-                      ]
-                  }
-                  ,{
-                    path: '/GmData/detial/:id',
-                    name: 'Detial',
-                    component: Detial,
+                  {
+                    path: '/HelloWorld',
+                    name: 'HelloWorld',
+                    component: HelloWorld
                   }
                   ,{
                     path: '/',
@@ -100,7 +46,6 @@ export default [
                     component: Register
                   }
                   ,{
-                    
 
                     path: '/CompenyDetial/:id',
                     name: 'CompenyDetial',
@@ -124,33 +69,27 @@ export default [
                     component: Detial
                   }
                   
-                  // ,{
-                  //   path: '/SM/SmData',
-                  //   name: 'SmData',
-                  //   component: SmData,
-                  //    children: [
-                  //     ,{
-                  //         path: '/SM/SmData/Gjjs',
-                  //         name: 'Gjjs',
-                  //         component: Gjjs,
-                  //     }
-                  //     ,{
-                  //         path: '/SmData',
-                  //         redirect: 'Gjjs'
-                  //     }
-                      
-                  //   ]
-                  // }
-
-
-
-
+                  ,{
+                    path: '/SmData',
+                    name: 'SmData',
+                    component: SmData,
+                     children: [
+                      ,{
+                          path: '/SmData/Gjjs',
+                          name: 'Gjjs',
+                          component: Gjjs,
+                      }
+                      ,{
+                          path: '/SmData',
+                          redirect: 'Gjjs'
+                      }
+                    ]
+                  }
                   ,{
                     path: '/SmData/detial/:id',
                     name: 'Detial',
                     component: Detial,
                   }
-
                   ,{
                     path: '/main',
                     name: 'Main',
@@ -172,5 +111,14 @@ export default [
                       }
                     ]
                   }
-                 
+                  ,{
+                    path: '/GmData',
+                    name: 'GmData',
+                    component: GmData
+                  }
+                  ,{
+                    path: '/GmData/detial/:id',
+                    name: 'Detial',
+                    component: Detial,
+                  }
   ]
