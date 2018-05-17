@@ -38,37 +38,37 @@
                  @on-custom-comp="customCompFunc"
                  ></v-table> -->
                 <div>
-                    <el-table :data="searchJSON.tableData" stripe align="left" :height="tabheight" @cell-click="gsjcfn" :max-height="tabheight">
-                        <el-table-column prop="number" fixed label="序号" width="60">
+                    <el-table :data="searchJSON.tableData" stripe align="center" header-align="left" :height="tabheight" @cell-click="gsjcfn" :max-height="tabheight">
+                        <el-table-column prop="number" align="center" fixed label="序号">
                         </el-table-column>
                         <el-table-column prop="gsjc" fixed label="公司简称">
                         </el-table-column>
-                        <el-table-column prop="zczb" width="120" label="注册资本(万)">
+                        <el-table-column prop="zczb" width="120" align="center" label="注册资本(万)">
                         </el-table-column>
-                        <el-table-column prop="sjbs" label="实缴比例">
+                        <el-table-column prop="sjbs" align="center" label="实缴比例">
                         </el-table-column>
-                        <el-table-column prop="glgm" label="管理规模">
+                        <el-table-column prop="glgm" align="center" label="管理规模">
                         </el-table-column>
                         <el-table-column prop="ygrs" label="员工人数">
                         </el-table-column>
-                        <el-table-column prop="jzrq" width="120" label="截至日期">
+                        <el-table-column prop="jzrq" width="90" label="截至日期">
                         </el-table-column>
-                        <el-table-column prop="clrq" label="成立日期">
+                        <el-table-column prop="clrq" align="center" label="成立日期">
                         </el-table-column>
-                        <el-table-column prop="djrq" label="登记日期">
+                        <el-table-column prop="djrq" align="center" label="登记日期">
                         </el-table-column>
-                        <el-table-column prop="ishy" label="是否会员">
+                        <el-table-column prop="ishy" align="center" label="是否会员">
                         </el-table-column>
-                        <el-table-column prop="pronum" label="产品数量">
+                        <el-table-column prop="pronum" align="center" label="产品数量">
                         </el-table-column>
                         <el-table-column prop="cominfo" label="公司介绍">
                         </el-table-column>
-                        <el-table-column prop="jljl" label="尽量记录">
+                        <el-table-column prop="jljl" align="center" label="尽量记录">
                         </el-table-column>
-                        <el-table-column prop="address" label="办公地址">
+                        <el-table-column prop="address" label="办公地址" width="360">
                         </el-table-column>
-                        <el-table-column prop="operat" label="操作">
-                        </el-table-column>
+                      <!--   <el-table-column prop="operat" label="操作">
+                        </el-table-column> -->
                     </el-table>
                 </div>
             </div>

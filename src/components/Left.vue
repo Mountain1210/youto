@@ -35,9 +35,11 @@ export default {
         path=path.split("/");
         console.log(path[0])
         if(path[0]==""){
+          // alert(2)
            this.$store.dispatch("getcurrentMenu","/");
             return
         }else{
+          // alert(1)
             this.$store.dispatch("getcurrentMenu",path[0])
         }
       }

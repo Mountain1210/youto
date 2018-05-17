@@ -100,9 +100,11 @@ export default {
         sublibtn: function() {
             this.$store.dispatch("sublibtn")
         },
+
         // getdocumentHeight: function() {
         //     this.$store.dispatch("getdocumentHeight")
         // },
+
         handleClose: function() {
             this.$store.dispatch("handleClose")
         },
@@ -136,6 +138,7 @@ export default {
     },
     mounted: function() {
         // this.getdocumentHeight();
+
     },
     // created() {
     //     let that = this;

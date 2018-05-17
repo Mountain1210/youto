@@ -36,7 +36,7 @@ const state = {
             number: "1",
             number2: "2323",
             gsjc: "中天嘉禾",
-            zczb: "10000",
+            zczb: "1000A",
             sjbs: "100",
             glgm: "4",
             ygrs: "201812",
@@ -47,7 +47,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }, {
@@ -65,7 +65,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }, {
@@ -83,7 +83,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }, {
@@ -101,7 +101,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }, {
@@ -119,7 +119,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }, {
@@ -137,7 +137,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }, {
@@ -155,7 +155,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }, {
@@ -173,7 +173,7 @@ const state = {
             pronum: "13",
             cominfo: "查看详情",
             jljl: "三苑桥",
-            address: "三苑桥",
+            address: "北京市海淀区海淀区中关村银科大厦611室",
             operat1: "这是操作",
             operat2: "这是操作2"
         }],

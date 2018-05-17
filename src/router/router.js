@@ -13,7 +13,6 @@ import Diff from '@/components/diff'
 import SmProdata from '@/components/SmProdata'
 import SM from '@/components/Sm'
 import GM from '@/components/Gm'
-
 import Difftablist from '@/components/unit/difftablist'
 export default [
                 ,{
@@ -151,6 +150,11 @@ export default [
                     component: Detial,
                   }
 
+                  ,{
+                    path: '/SmProdata',
+                    name: 'SmProdata',
+                    component: SmProdata
+                  }
                   ,{
                     path: '/main',
                     name: 'Main',
