@@ -23,6 +23,7 @@ export default {
    this.lstfunc(obj);  
   },
   mounted: function () {
+     alert(2222)
     console.log(this.submenu)
     this.getdocumentLeftHeight();
     // this.getdocumentHeight();     
@@ -30,6 +31,7 @@ export default {
   },
   watch:{
       $route(to){
+        alert(11111)
         var path=to.path.substring(1);        
         path=path.split("/");
         console.log(path[0])
