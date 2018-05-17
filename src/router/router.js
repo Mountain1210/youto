@@ -11,14 +11,31 @@ import CompenyDetial from '@/components/compenyDetial'
 import Register from '@/components/register'
 import Diff from '@/components/diff'
 import SmProdata from '@/components/SmProdata'
+import SM from '@/components/Sm'
 
 import Difftablist from '@/components/unit/difftablist'
 export default [
                   {
-                    path: '/HelloWorld',
-                    name: 'HelloWorld',
-                    component: HelloWorld
-                  }
+                    path: '/SM/SmData',
+                    name: 'SmData',
+                    component: SmData               
+                  },
+                  {
+                    path: '/SM',
+                    redirect: 'SmData'
+                  },
+                  {
+                    path: '/SM/',
+                    name: 'Sm',
+                    component: SM,
+                    children:[
+                      {
+                          path: '/SM/SmProdata',
+                          name: 'SmProdata',
+                          component: SmProdata,
+                      }
+                    ]
+                  },
                   ,{
                     path: '/',
                     name: 'Index',
@@ -73,12 +90,12 @@ export default [
                   }
                   
                   ,{
-                    path: '/SmData',
+                    path: '/SM/SmData',
                     name: 'SmData',
                     component: SmData,
                      children: [
                       ,{
-                          path: '/SmData/Gjjs',
+                          path: '/SM/SmData/Gjjs',
                           name: 'Gjjs',
                           component: Gjjs,
                       }
@@ -86,6 +103,7 @@ export default [
                           path: '/SmData',
                           redirect: 'Gjjs'
                       }
+                      
                     ]
                   }
                   ,{
@@ -93,11 +111,7 @@ export default [
                     name: 'Detial',
                     component: Detial,
                   }
-                  ,{
-                    path: '/SmProdata',
-                    name: 'SmProdata',
-                    component: SmProdata
-                  }
+
                   ,{
                     path: '/main',
                     name: 'Main',

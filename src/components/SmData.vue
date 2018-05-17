@@ -1,4 +1,6 @@
 <template>
+    <div>
+         <NavLeft></NavLeft>
     <div class="main">
         <div class="mainlist" id="mainContent">
             <div id="subleftContent" :style="{width:subleftw}">
@@ -77,6 +79,7 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 <script>
 import Vue from 'vue'
@@ -86,7 +89,7 @@ import {
 from "vuex"
 import Slide from "./slide.vue"
 import Search from "./search.vue"
-import Marque from "./unit/marquee.vue"
+import NavLeft from './Left.vue'
 export default {
     name: 'SmData',
     data() {
@@ -110,7 +113,7 @@ export default {
         }
     },
     components: {
-        Slide, Search
+        Slide, Search,NavLeft
     },
     computed: mapGetters(['searchJSON', 'subsnump', 'dialogVisible'])
         // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])

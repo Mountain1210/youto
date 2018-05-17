@@ -23,6 +23,7 @@ export default {
    this.lstfunc(obj);  
   },
   mounted: function () {
+    console.log(this.submenu)
     this.getdocumentLeftHeight();
     // this.getdocumentHeight();     
      

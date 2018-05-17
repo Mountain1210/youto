@@ -3,7 +3,6 @@ import * as types from './type'
 import Vue from 'Vue'
 import Vuex from 'vuex' 
 import axios from 'axios' 
-    // import ElementUI from 'element-ui';
 Vue.use(Vuex)
 
 
