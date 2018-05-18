@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import {mapGetters,mapActions} from "vuex"
 export default {
   name: 'Top',
   data () {
@@ -25,6 +26,22 @@ export default {
       // navArray:[{name:'私幕数据',url:"/SmData"},{name:'公幕数据',url:"/GmData"},{name:'评分排名',url:'/main'},{name:'研究分析',url:'/detial'},{name:'组合管理',url:'/zhgl'},{name:'我的工作区',url:'/myww'}]
       navArray:[{name:'私幕数据',url:"/SM"},{name:'公幕数据',url:"/GM"},{name:'评分排名',url:'/main'},{name:'研究分析',url:'/detial'},{name:'组合管理',url:'/register'},{name:'我的工作区',url:'/diff'}]
     }
+  }
+  ,beforeCreate(){
+    // alert(window.location.href)
+  },
+  watch:{
+    $route(to){
+        var path=to.path.substring(1);        
+        path=path.split("/");
+        console.log(path[0])
+        if(path[0]==""){
+           this.$store.dispatch("getcurrentMenu","/");
+            return
+        }else{
+            this.$store.dispatch("getcurrentMenu",path[0])
+        }
+      }
   }
 }
 </script>

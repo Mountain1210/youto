@@ -20,7 +20,7 @@ export default {
   beforeMount:function(){
    var allcurrenturl=localStorage.getItem("currentUrl");
    allcurrenturl=JSON.stringify(allcurrenturl);
-   console.log(allcurrenturl)
+
    var obj=eval(allcurrenturl);
    this.lstfunc(obj);  
   },
@@ -30,7 +30,6 @@ export default {
      
   },
   watch:{
-
       $route(to){
         var path=to.path.substring(1);        
         path=path.split("/");
@@ -47,8 +46,7 @@ export default {
     }
     ,computed:mapGetters(['count','getOdd','subsnump','submenu'])
     ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","lstfunc","getdocumentLeftHeight"])
-  ,created(){
-  }
+  ,created(){}
 }
 
             // ,{

@@ -133,10 +133,10 @@ export default {
             console.log(row.number)
             console.log(column.label)
             if (column.label == "公司简称") {
-                this.$router.push('/GmData/detial/'+ row.number)
+                this.$router.push('/GM/GmData/detial/'+ row.number)
             }
             if (column.label == "注册资本(万)") {
-                this.$router.push('/CompenyDetial/' + row.number);
+                this.$router.push('/GM/CompenyDetial/' + row.number);
             }
         }
     }

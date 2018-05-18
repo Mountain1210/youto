@@ -15,13 +15,17 @@ import SM from '@/components/Sm'
 import GM from '@/components/Gm'
 import Difftablist from '@/components/unit/difftablist'
 export default [
-                ,{
+                  {
                              path: '/SM',
                              redirect: '/SM/SmData/Gjjs'
                   }
                   ,{
                              path: '/GM',
                              redirect: '/GM/GmData'
+                  }
+                  ,{
+                    path: '/',
+                    redirect: '/GM/GmData'
                   }
                   ,{
                     path: '/SM',
@@ -49,7 +53,13 @@ export default [
                             }
                             
                           ]
-                      } 
+                      }
+                      ,{
+                          path: '/SM/Index',
+                          name: 'Index',
+                          component: Index
+                        } 
+
                     ]
                   }
                  
@@ -63,18 +73,14 @@ export default [
                           name: 'GmData',
                           component: GmData
                       }
+                      ,{
+                        path: '/GM/GmData/detial/:id',
+                        name: 'Detial',
+                        component: Detial,
+                      }
                     ]
                   }
-                  ,{
-                    path: '/GmData/detial/:id',
-                    name: 'Detial',
-                    component: Detial,
-                  }
-                  ,{
-                    path: '/',
-                    name: 'Index',
-                    component: Index
-                  }
+                  
                   ,{
                     path: '/Diff',
                     name: 'Diff',
