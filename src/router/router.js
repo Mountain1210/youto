@@ -20,6 +20,10 @@ export default [
                              redirect: '/SM/SmData/Gjjs'
                   }
                   ,{
+                             path: '/GM',
+                             redirect: '/GM/GmData'
+                  }
+                  ,{
                     path: '/SM',
                     name: 'Sm',
                     component: SM,
@@ -49,7 +53,7 @@ export default [
                     ]
                   }
                  
-                   ,{
+                  ,{
                     path: '/GM',
                     name: 'GM',
                     component: GM,
@@ -57,13 +61,9 @@ export default [
                       {
                           path: '/GM/GmData',
                           name: 'GmData',
-                          component: GmData,
-                          children: [
-                            
-                            
-                          ]
+                          component: GmData
                       }
-                      ]
+                    ]
                   }
                   ,{
                     path: '/GmData/detial/:id',

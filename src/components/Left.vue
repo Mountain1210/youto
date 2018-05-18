@@ -19,7 +19,8 @@ export default {
   },
   beforeMount:function(){
    var allcurrenturl=localStorage.getItem("currentUrl");
-   allcurrenturl=JSON.stringify(allcurrenturl)
+   allcurrenturl=JSON.stringify(allcurrenturl);
+   console.log(allcurrenturl)
    var obj=eval(allcurrenturl);
    this.lstfunc(obj);  
   },
