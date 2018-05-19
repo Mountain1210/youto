@@ -13,7 +13,6 @@
 <span></span>
 </div>
 </div>
-<!-- <div class="subsmain" @click="clickOdd"> 公募现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div> -->
 <div>
   <el-table
     :data="searchJSON.tableData"
@@ -116,7 +115,7 @@ export default {
      tabheight:document.documentElement.clientHeight-125
      ,tabht:document.documentElement.clientHeight-135
      ,subleftw:""
-     ,rightNavArray:[{name:"高级检索",url:"/GmData/Gjjs"},{name:"我的产品池",url:"/GmData/Wdcpc"},{name:"对比库",url:"/GmData/Dbk"},{name:"产品快速预览",url:"/GmData/Cpksyl"},]
+     ,rightNavArray:[{name:"高级检索",url:"/GM/GmData/Gjjs"},{name:"我的产品池",url:"/GmData/Wdcpc"},{name:"对比库",url:"/GmData/Dbk"},{name:"产品快速预览",url:"/GmData/Cpksyl"},]
 
           }
   }
