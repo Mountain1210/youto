@@ -26,7 +26,7 @@ export default [
                   }
                   ,{
                     path: '/',
-                    redirect: '/GM/GmData'
+                    redirect: '/SM/Index'
                   }
                   ,{
                     path: '/GM/GmData',
