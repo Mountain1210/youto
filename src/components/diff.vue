@@ -8,7 +8,7 @@
                 </div>
                 <div id="diffContent" class="scrollContent" :style="{width:subleftws,height:tabsubheight}">
                     <div class="diffMain">
-                        <Echart :ArrayData="['蒸发量','降水量','平均温度']" :NumData='[5, 20, 36, 10, 10, 20]'></Echart>
+                        <Echart :ArrayData="['蒸发量','降水量','平均温度']" :ArrayDataDetial='this.arrayDatadetial' :NumData='[5, 20, 36, 10, 10, 20]'></Echart>
                         <Difftable></Difftable>
                         <Difftable></Difftable>
                     </div>
@@ -63,8 +63,9 @@ export default {
             }]
         }
 
-    },
-    components: {
+    }
+     ,computed:mapGetters(['searchJSON','count','getOdd','arrayDatadetial'])
+    ,components: {
         Search, FuncbtnTime, Echart, Difftable, Slide
     },
     mounted: function() {

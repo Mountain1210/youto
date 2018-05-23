@@ -14,6 +14,7 @@ import SmProdata from '@/components/SmProdata'
 import GmProdata from '@/components/GmProdata'
 import SM from '@/components/Sm'
 import GM from '@/components/Gm'
+import WORK from '@/components/WORK'
 import Difftablist from '@/components/unit/difftablist'
 export default [
                   {
@@ -31,6 +32,10 @@ export default [
                   ,{
                     path: '/GM/GmData',
                     redirect: '/GM/GmData/Gjjs'
+                  }
+                  ,{
+                    path: '/WORK',
+                    redirect: '/WORK/Diff'
                   }
                   ,{
                     path: '/SM',
@@ -98,20 +103,27 @@ export default [
                         component: Detial,
                       }
                    ]
-                  }
-                  
-                  ,{
-                    path: '/Diff',
-                    name: 'Diff',
-                    component: Diff,
-                    children: [
-                      ,{
-                          path: '/Diff/difftablist',
-                          name: 'Difftablist',
-                          component: Difftablist,
+                  },{
+                    path: '/WORK',
+                    name: 'WORK',
+                    component: WORK,
+                    children:[
+                      {
+                        path: '/WORK/Diff',
+                        name: 'Diff',
+                        component: Diff,
+                        children: [
+                          ,{
+                              path: '/WORK/Diff/difftablist',
+                              name: 'Difftablist',
+                              component: Difftablist,
+                          }
+                        ]
                       }
                     ]
                   }
+                  
+                  
 
                   ,{
                     path: '/Urltabview',
