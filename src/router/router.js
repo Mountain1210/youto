@@ -11,6 +11,7 @@ import CompenyDetial from '@/components/compenyDetial'
 import Register from '@/components/register'
 import Diff from '@/components/diff'
 import SmProdata from '@/components/SmProdata'
+import SmPro from '@/components/SmPro'
 import GmProdata from '@/components/GmProdata'
 import SM from '@/components/Sm'
 import GM from '@/components/Gm'
@@ -46,6 +47,15 @@ export default [
                           path: '/SM/SmProdata',
                           name: 'SmProdata',
                           component: SmProdata,
+                          children: [
+                            
+                            
+                          ]
+                      }
+                      ,{
+                          path: '/SM/SmPro',
+                          name: 'SmPro',
+                          component: SmPro,
                           children: [
                             
                             

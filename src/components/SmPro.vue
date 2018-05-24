@@ -122,7 +122,7 @@ import Slide from "./slide.vue"
 import Search from "./search.vue"
 import Marque from "./unit/marquee.vue"
 export default {
-    name: 'SmData',
+    name: 'SmPro',
     data() {
         return {
             rightNavArray: [{
