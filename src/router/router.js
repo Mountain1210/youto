@@ -131,9 +131,7 @@ export default [
                         ]
                       }
                     ]
-                  }
-                  
-                  
+                  }                
 
                   ,{
                     path: '/Urltabview',
