@@ -337,7 +337,7 @@ a:focus,
 }
 .func .el-input-group__append{background-color: rgba(79, 159, 222, 1); border-radius: 0 4px 4px 0; border:1px solid #23A3DBFF; border-left: none}
 .showmap{float:left; padding:6px 8px; margin-left:16px; background-color:rgba(79, 159, 222, 1); color:#fff;border-radius: 5px; margin-top: 3px; }
-.showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right;}
+.showmap .maptxt{font-size:12px; padding-left:8px; font-weight:normal;float:right; cursor: pointer;}
 .func{overflow:hidden; border-bottom:1px solid #f0f0f0; background-color:#fff; padding:4px 10px; margin-top:2px}
 .marqueecla{display:inline;float:left; padding-top:2px; margin-left:16px; padding-top:8px;}
 .main .mainlist{width:100%}

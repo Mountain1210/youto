@@ -10,15 +10,15 @@
   width="75%"
   height="500"
   :before-close="handleClose">
-  <span>这是一段信息</span>
+  <div id="allmap">怎么不出现</div>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="isopen(0)">取 消</el-button>
-    <el-button type="primary" @click="isopen(2)">确 定</el-button>
+    <el-button @click="dialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
   </span>
 </el-dialog>
                     <Search></Search>
                     <div class="showmap"><span class="iconfont icon-earth"></span>
-                        <div class="maptxt">查看公司布图</div>
+                        <div class="maptxt" @click="showDilog()">查看公司布图</div>
                     </div>
                     <div class="marqueecla">
                         <marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee>
@@ -121,6 +121,7 @@ from "vuex"
 import Slide from "./slide.vue"
 import Search from "./search.vue"
 import Marque from "./unit/marquee.vue"
+import BMap from 'BMap'  
 export default {
     name: 'SmPro',
     data() {
@@ -140,14 +141,32 @@ export default {
             }],
             tabheight: document.documentElement.clientHeight - 125,
             tabht: document.documentElement.clientHeight - 125,
-            subleftw: ""
+            subleftw: "",
+            dialogVisible:false
         }
     },
     components: {
         Slide, Search
     },
-    computed: mapGetters(['searchJSON', 'subsnump', 'dialogVisible']),
+    computed: mapGetters(['searchJSON', 'subsnump']),
     methods: {
+        ready: function () {  
+            var map = new BMap.Map('allmap')  
+            map.enableScrollWheelZoom(true)  
+            console.log(map)  
+        
+            var localSearch = new BMap.LocalSearch(map)  
+            // localSearch.enableAutoViewport() // 允许自动调节窗体大小  
+            map.clearOverlays() // 清空原来的标注  
+            localSearch.setSearchCompleteCallback(function (searchResult) {  
+              var poi = searchResult.getPoi(0)  
+              map.centerAndZoom(poi.point, 20)  
+              var point = new BMap.Point(poi.point.lng, poi.point.lat)  
+              var marker = new BMap.Marker(point) // 创建标注，为要查询的地方对应的经纬度  
+              map.addOverlay(marker)  
+            })  
+            localSearch.search(this.$route.params.addr)  
+          },  
         sublibtn: function() {
             this.$store.dispatch("sublibtn")
         },
@@ -155,7 +174,8 @@ export default {
             this.$store.dispatch("getdocumentHeight")
         },
         handleClose: function() {
-            this.$store.dispatch("handleClose")
+            // this.$store.dispatch("handleClose")
+            this.dialogVisible=false
         },
         isopen: function(num) {
             this.$store.dispatch("isopen", num)
@@ -169,6 +189,9 @@ export default {
             if (column.label == "注册资本(万)") {
                 this.$router.push('/CompenyDetial/' + row.number);
             }
+        },
+        showDilog(){
+            this.dialogVisible=true
         }
     },
     beforeCreate: function() {
@@ -176,6 +199,7 @@ export default {
     },
     mounted: function() {
         this.getdocumentHeight();
+        this.ready();
     },
     created() {
         let that = this;
