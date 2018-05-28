@@ -3,7 +3,7 @@
         <div class="mainlist" id="mainContent">
             <div id="subleftContent" style="width:100%">
                 <div class="func" id="fnc">
-                   <!--  <el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button> -->
+                    <el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button>
 <el-dialog
   title="提示"
   :visible.sync="dialogVisible"
