@@ -116,19 +116,6 @@ export default {
     name: 'SimGroup',
     data() {
         return {
-            rightNavArray: [{
-                name: "高级检索",
-                url: "/SmData/Gjjs"
-            }, {
-                name: "我的产品池",
-                url: "/SmData/Wdcpc"
-            }, {
-                name: "对比库",
-                url: "/SmData/Dbk"
-            }, {
-                name: "产品快速预览",
-                url: "/SmData/Cpksyl"
-            }],
             tabheight: document.documentElement.clientHeight - 125,
             tabht: document.documentElement.clientHeight - 125,
             subleftw: "",
@@ -141,7 +128,7 @@ export default {
     components: {
         Slide, Search
     },
-    computed: mapGetters(['searchJSON', 'subsnump', 'dialogVisible'])
+    computed: mapGetters(['searchJSON', 'subsnump', 'dialogVisible','rightNavArray'])
         // ,methods:mapActions(['sublibtn',"getdocumentHeight","getcurrentMenu","clickOdd","clickAsync","customCompFunc","handleClose","isopen"])
         ,
     methods: {

@@ -90,6 +90,11 @@ export default [
                           name: 'Index',
                           component: Index
                         } 
+                         ,{
+                        path: '/SM/SmData/detial/:id',
+                        name: 'Detial',
+                        component: Detial,
+                      }
 
                     ]
                   }

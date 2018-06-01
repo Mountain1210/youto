@@ -4,18 +4,19 @@
             <div id="subleftContent" :style="{width:subleftw}">
                 <div class="func" id="fnc">
                    <!--  <el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button> -->
-<el-dialog
-  title="提示"
-  :visible.sync="dialogVisible"
-  width="75%"
-  height="500"
-  :before-close="handleClose">
-  <div id="allmap">怎么不出现</div>
-  <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
-</el-dialog>
+                    <el-dialog
+                      title="提示"
+                      :visible.sync="dialogVisible"
+                      width="75%"
+                      height="500"
+                      :before-close="handleClose">
+                      <!-- 这里需要一个正确的百度ak才能正常使用 -->
+                      <div id="allmap">怎么不出现</div>
+                      <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVisible = false">取 消</el-button>
+                        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                      </span>
+                    </el-dialog>
                     <Search></Search>
                     <div class="showmap"><span class="iconfont icon-earth"></span>
                         <div class="maptxt" @click="showDilog()">查看公司布图</div>
@@ -126,19 +127,6 @@ export default {
     name: 'SmPro',
     data() {
         return {
-            rightNavArray: [{
-                name: "高级检索",
-                url: "/SmData/Gjjs"
-            }, {
-                name: "我的产品池",
-                url: "/SmData/Wdcpc"
-            }, {
-                name: "对比库",
-                url: "/SmData/Dbk"
-            }, {
-                name: "产品快速预览",
-                url: "/SmData/Cpksyl"
-            }],
             tabheight: document.documentElement.clientHeight - 125,
             tabht: document.documentElement.clientHeight - 125,
             subleftw: "",
@@ -148,7 +136,7 @@ export default {
     components: {
         Slide, Search
     },
-    computed: mapGetters(['searchJSON', 'subsnump']),
+    computed: mapGetters(['searchJSON', 'subsnump','rightNavArray']),
     methods: {
         ready: function () {  
             var map = new BMap.Map('allmap')  

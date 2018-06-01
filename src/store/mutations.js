@@ -41,6 +41,19 @@ const state = {
                         data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
                         }
  ],
+ rightNavArray: [{
+     name: "高级检索",
+     url: "/SM/SmData/Gjjs"
+ }, {
+     name: "我的产品池",
+     url: "/SmData/Wdcpc"
+ }, {
+     name: "对比库",
+     url: "/SmData/Dbk"
+ }, {
+     name: "产品快速预览",
+     url: "/SmData/Cpksyl"
+ }],
     dialogVisible: false,
     subsnump: 0,
     tabheight: 500,
@@ -351,6 +364,9 @@ const getters = {
     searchJSON: (state) => {
 
         return state.searchJSON
+    },
+    rightNavArray:(state)=>{
+        return state.rightNavArray
     },
     dialogVisible: (state) => {
         return state.dialogVisible;
