@@ -8,7 +8,7 @@
   <li class="lastli "><span class="iconfont icon-moreunfold"></span></li>
   </ul>
   <ul class="messageContent">
-  <li class="question">问题及意见反馈</li>
+  <li class="question"><router-link tag="span" to="IN/question">问题及意见反馈</router-link>></li>
   <li class="message"><span class="iconfont icon-remind"></span></li>
   <li class="person"><span class="iconfont icon-account"></span></li>
 
@@ -56,7 +56,7 @@ export default {
 .messageContent {float:right; color:#fff;  position: absolute;  top:33%; right:0px}
 .messageContent li{float:left; margin-right:24px}
 .messageContent li span:before{ font-size:21px; margin-top:8px}
-.messageContent .question{border-radius:4px; background-color:#57b0e6; font-size:14px; padding:4px 8px}
+.messageContent .question{border-radius:4px; background-color:#57b0e6; font-size:14px; padding:4px 8px; cursor: pointer;}
 .messageContent .message{padding-top: 3px;}
 .messageContent .person{margin-right:12px;padding-top: 3px;}
 .logo a{color:#fff; text-decoration:none}
