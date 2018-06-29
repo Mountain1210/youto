@@ -64,6 +64,16 @@ export default {
         }, index) => {
             commit(types.SUBLIBTN, index)
         },
+        preview: ({
+            commit,
+            state
+        }, index) => {
+            if(document.getElementById("subleftContent").style.width=="100%"){
+                index=document.getElementById("subleftContent").offsetWidth-420;
+            }
+            
+            commit(types.PREVIEW, index)
+        },
         isopen: ({
             commit,
             state

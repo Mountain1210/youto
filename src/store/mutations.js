@@ -14,7 +14,8 @@ import {
     CLOSEDIOAG,
     SUBLEFTW,
     DIFFLIST,
-    DIFFARRAYDATADETIAL
+    DIFFARRAYDATADETIAL,
+    PREVIEW
 }
 from './type'
 import Vue from 'vue'
@@ -44,16 +45,17 @@ const state = {
  rightNavArray: [{
      name: "高级检索",
      url: "/SM/SmData/Gjjs"
- }, {
-     name: "我的产品池",
-     url: "/SmData/Wdcpc"
- }, {
-     name: "对比库",
-     url: "/SmData/Dbk"
- }, {
-     name: "产品快速预览",
-     url: "/SmData/Cpksyl"
- }],
+     }, {
+         name: "我的产品池",
+         url: "/SmData/Wdcpc"
+     }, {
+         name: "对比库",
+         url: "/SmData/Dbk"
+     }, {
+         name: "产品快速预览",
+         url: "/SmData/Cpksyl"
+     }],
+    rightShow:true,
     dialogVisible: false,
     subsnump: 0,
     tabheight: 500,
@@ -345,6 +347,14 @@ const mutations = {
         state.footerShow = false;
     }, [FOOTER_SHOW](state) {
         state.footerShow = true;
+    }, [PREVIEW](state, index) {
+        state.rightShow = !state.rightShow;
+        if(state.rightShow){
+             document.getElementById("subleftContent").style.width=index+"px"
+              
+            }else{
+             document.getElementById("subleftContent").style.width="100%"
+            }
     }
 };
 
@@ -382,7 +392,10 @@ const getters = {
         },
     arrayDatadetial: (state) => {
             return state.ArrayDataDetial;
-        }
+        },
+    rightShow:(state)=>{
+        return state.rightShow;
+    }
 };
 
 export default {

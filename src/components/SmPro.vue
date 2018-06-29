@@ -22,22 +22,19 @@
                         <div class="maptxt" @click="showDilog()">查看公司布图</div>
                     </div>
                     <div class="marqueecla">
-                        <marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee>
+                        <marquee scrolldelay="100">{{this.rightShow}}</marquee>
                     </div>
-                    <div class="sf" style="float:right; padding-right:8px; font-size:18px">
-                        <span class="iconfont icon-category"></span>
-                        <span class="iconfont icon-emailfilling" style="color:rgba(79, 159, 222, 1)"></span>
-                        <span></span>
-                    </div>
+                    <Jsbtn @showorhide="preview()"></Jsbtn>
                 </div>
-                <!--<div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>-->
+                <!-- <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>-->
                 <!-- <v-table is-horizontal-resize
                  style="width:100%"
                  :columns="searchJSON.columns"
                  is-vertical-resize=true
                  :table-data="searchJSON.tableData"
                  @on-custom-comp="customCompFunc"
-                 ></v-table> -->
+                 ></v-table> 
+                -->
                 <div>
                     <el-table :data="searchJSON.tableData" stripe align="center" header-align="left" :height="tabheight" @cell-click="gsjcfn" :max-height="tabheight">
                         <el-table-column prop="Number" align="center" fixed label="序号">
@@ -107,7 +104,7 @@
                     </el-table>
                 </div>
             </div>
-            <div id="subrightContent">
+            <div id="subrightContent" v-show="rightShow">
                 <Slide :sublistArray="rightNavArray" @li="sublibtn($event)" :subsnum="subsnump"></Slide>
             </div>
         </div>
@@ -122,6 +119,7 @@ from "vuex"
 import Slide from "./slide.vue"
 import Search from "./search.vue"
 import Marque from "./unit/marquee.vue"
+import Jsbtn from "./unit/jsbtn.vue"
 import BMap from 'BMap'  
 export default {
     name: 'SmPro',
@@ -134,11 +132,11 @@ export default {
         }
     },
     components: {
-        Slide, Search
+        Slide, Search,Jsbtn
     },
-    computed: mapGetters(['searchJSON', 'subsnump','rightNavArray']),
+    computed: mapGetters(['searchJSON', 'subsnump','rightNavArray','rightShow']),
     methods: {
-        ready: function () {  
+        ready: function () {
             var map = new BMap.Map('allmap')  
             map.enableScrollWheelZoom(true)  
             console.log(map)  
@@ -155,6 +153,9 @@ export default {
             })  
             localSearch.search(this.$route.params.addr)  
           },  
+          preview:function(){
+            this.$store.dispatch("preview")
+          },
         sublibtn: function() {
             this.$store.dispatch("sublibtn")
         },
