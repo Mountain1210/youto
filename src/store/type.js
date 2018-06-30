@@ -1,4 +1,5 @@
 export const SUBLIBTN='SUBLIBTN'
+export const PREVIEW='PREVIEW'
 export const DEINCREMENT='DEINCREMENT'
 export const CLICKODD='CLICKODD'
 export const CLICKASYNC='CLICKASYNC'

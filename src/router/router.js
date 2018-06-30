@@ -15,7 +15,10 @@ import SmPro from '@/components/SmPro'
 import GmProdata from '@/components/GmProdata'
 import SM from '@/components/Sm'
 import GM from '@/components/Gm'
+import ZH from '@/components/Zh'
+import YJ from '@/components/Yj'
 import WORK from '@/components/WORK'
+import SimGroup from '@/components/Simgroup'
 import Difftablist from '@/components/unit/difftablist'
 export default [
                   {
@@ -25,6 +28,14 @@ export default [
                   ,{
                              path: '/GM',
                              redirect: '/GM/GmData'
+                  }
+                  ,{
+                             path: '/ZH',
+                             redirect: '/ZH/register'
+                  }
+                  ,{
+                             path: '/YJ',
+                             redirect: '/YJ/detial'
                   }
                   ,{
                     path: '/',
@@ -79,6 +90,11 @@ export default [
                           name: 'Index',
                           component: Index
                         } 
+                         ,{
+                        path: '/SM/SmData/detial/:id',
+                        name: 'Detial',
+                        component: Detial,
+                      }
 
                     ]
                   }
@@ -131,7 +147,36 @@ export default [
                         ]
                       }
                     ]
-                  }                
+                  }
+                  ,{
+                    path: '/ZH',
+                    name: 'ZH',
+                    component: ZH,
+                    children:[
+                      ,{
+                          path: '/ZH/Register',
+                          name: 'Register',
+                          component: Register,
+                      }
+                      ,{
+                          path: '/ZH/SimGroup',
+                          name: 'SimGroup',
+                          component: SimGroup,
+                      }
+                    ]
+                  } 
+                  ,{
+                    path: '/YJ',
+                    name: 'YJ',
+                    component: YJ,
+                    children:[
+                      ,{
+                          path: '/YJ/detial',
+                          name: 'Detial',
+                          component: Detial,
+                      }
+                    ]
+                  }               
 
                   ,{
                     path: '/Urltabview',

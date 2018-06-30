@@ -129,8 +129,6 @@ export default {
       this.$store.dispatch("clickOdd");
     }
     ,gsjcfn: function(row, column, cell, event) {
-            console.log(row.number)
-            console.log(column.label)
             if (column.label == "公司简称") {
                 this.$router.push('/GM/GmData/detial/'+ row.number)
             }

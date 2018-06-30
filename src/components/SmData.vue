@@ -91,19 +91,6 @@ export default {
     name: 'SmData',
     data() {
         return {
-            rightNavArray: [{
-                name: "高级检索",
-                url: "/SmData/Gjjs"
-            }, {
-                name: "我的产品池",
-                url: "/SmData/Wdcpc"
-            }, {
-                name: "对比库",
-                url: "/SmData/Dbk"
-            }, {
-                name: "产品快速预览",
-                url: "/SmData/Cpksyl"
-            }],
             tabheight: document.documentElement.clientHeight - 125,
             tabht: document.documentElement.clientHeight - 125,
             subleftw: ""
@@ -112,7 +99,7 @@ export default {
     components: {
         Slide, Search
     },
-    computed: mapGetters(['searchJSON', 'subsnump', 'dialogVisible']),
+    computed: mapGetters(['searchJSON', 'subsnump', 'dialogVisible','rightNavArray']),
     methods: {
         sublibtn: function() {
             this.$store.dispatch("sublibtn")
@@ -130,7 +117,7 @@ export default {
             console.log(row.number)
             console.log(column.label)
             if (column.label == "公司简称") {
-                this.$router.push('/SmData/detial/'+ row.number)
+                this.$router.push('/SM/SmData/detial/'+ row.number)
             }
             if (column.label == "注册资本(万)") {
                 this.$router.push('/CompenyDetial/' + row.number);

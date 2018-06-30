@@ -4,39 +4,37 @@
             <div id="subleftContent" :style="{width:subleftw}">
                 <div class="func" id="fnc">
                    <!--  <el-button type="text" @click="isopen(1)">点击打开 Dialog</el-button> -->
-<el-dialog
-  title="提示"
-  :visible.sync="dialogVisible"
-  width="75%"
-  height="500"
-  :before-close="handleClose">
-  <span>这是一段信息</span>
-  <span slot="footer" class="dialog-footer">
-    <el-button @click="isopen(0)">取 消</el-button>
-    <el-button type="primary" @click="isopen(2)">确 定</el-button>
-  </span>
-</el-dialog>
+                    <el-dialog
+                      title="提示"
+                      :visible.sync="dialogVisible"
+                      width="75%"
+                      height="500"
+                      :before-close="handleClose">
+                      <!-- 这里需要一个正确的百度ak才能正常使用 -->
+                      <div id="allmap">怎么不出现</div>
+                      <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVisible = false">取 消</el-button>
+                        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                      </span>
+                    </el-dialog>
                     <Search></Search>
                     <div class="showmap"><span class="iconfont icon-earth"></span>
-                        <div class="maptxt">查看公司布图</div>
+                        <div class="maptxt" @click="showDilog()">查看公司布图</div>
                     </div>
                     <div class="marqueecla">
-                        <marquee scrolldelay="100">滚动信息滚动信息滚动信息滚动信息滚动信息</marquee>
+                        <marquee scrolldelay="100">{{this.rightShow}}</marquee>
                     </div>
-                    <div class="sf" style="float:right; padding-right:8px; font-size:18px">
-                        <span class="iconfont icon-category"></span>
-                        <span class="iconfont icon-emailfilling" style="color:rgba(79, 159, 222, 1)"></span>
-                        <span></span>
-                    </div>
+                    <Jsbtn @showorhide="preview()"></Jsbtn>
                 </div>
-                <!--<div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>-->
+                <!-- <div class="subsmain" @click="clickOdd"> 现在的数字为：{{count}},它现在是{{getOdd}},===={{subsnump}}</div>-->
                 <!-- <v-table is-horizontal-resize
                  style="width:100%"
                  :columns="searchJSON.columns"
                  is-vertical-resize=true
                  :table-data="searchJSON.tableData"
                  @on-custom-comp="customCompFunc"
-                 ></v-table> -->
+                 ></v-table> 
+                -->
                 <div>
                     <el-table :data="searchJSON.tableData" stripe align="center" header-align="left" :height="tabheight" @cell-click="gsjcfn" :max-height="tabheight">
                         <el-table-column prop="Number" align="center" fixed label="序号">
@@ -106,7 +104,7 @@
                     </el-table>
                 </div>
             </div>
-            <div id="subrightContent">
+            <div id="subrightContent" v-show="rightShow">
                 <Slide :sublistArray="rightNavArray" @li="sublibtn($event)" :subsnum="subsnump"></Slide>
             </div>
         </div>
@@ -121,33 +119,43 @@ from "vuex"
 import Slide from "./slide.vue"
 import Search from "./search.vue"
 import Marque from "./unit/marquee.vue"
+import Jsbtn from "./unit/jsbtn.vue"
+import BMap from 'BMap'  
 export default {
     name: 'SmPro',
     data() {
         return {
-            rightNavArray: [{
-                name: "高级检索",
-                url: "/SmData/Gjjs"
-            }, {
-                name: "我的产品池",
-                url: "/SmData/Wdcpc"
-            }, {
-                name: "对比库",
-                url: "/SmData/Dbk"
-            }, {
-                name: "产品快速预览",
-                url: "/SmData/Cpksyl"
-            }],
             tabheight: document.documentElement.clientHeight - 125,
             tabht: document.documentElement.clientHeight - 125,
-            subleftw: ""
+            subleftw: "",
+            dialogVisible:false
         }
     },
     components: {
-        Slide, Search
+        Slide, Search,Jsbtn
     },
-    computed: mapGetters(['searchJSON', 'subsnump', 'dialogVisible']),
+    computed: mapGetters(['searchJSON', 'subsnump','rightNavArray','rightShow']),
     methods: {
+        ready: function () {
+            var map = new BMap.Map('allmap')  
+            map.enableScrollWheelZoom(true)  
+            console.log(map)  
+        
+            var localSearch = new BMap.LocalSearch(map)  
+            // localSearch.enableAutoViewport() // 允许自动调节窗体大小  
+            map.clearOverlays() // 清空原来的标注  
+            localSearch.setSearchCompleteCallback(function (searchResult) {  
+              var poi = searchResult.getPoi(0)  
+              map.centerAndZoom(poi.point, 20)  
+              var point = new BMap.Point(poi.point.lng, poi.point.lat)  
+              var marker = new BMap.Marker(point) // 创建标注，为要查询的地方对应的经纬度  
+              map.addOverlay(marker)  
+            })  
+            localSearch.search(this.$route.params.addr)  
+          },  
+          preview:function(){
+            this.$store.dispatch("preview")
+          },
         sublibtn: function() {
             this.$store.dispatch("sublibtn")
         },
@@ -155,7 +163,8 @@ export default {
             this.$store.dispatch("getdocumentHeight")
         },
         handleClose: function() {
-            this.$store.dispatch("handleClose")
+            // this.$store.dispatch("handleClose")
+            this.dialogVisible=false
         },
         isopen: function(num) {
             this.$store.dispatch("isopen", num)
@@ -169,6 +178,9 @@ export default {
             if (column.label == "注册资本(万)") {
                 this.$router.push('/CompenyDetial/' + row.number);
             }
+        },
+        showDilog(){
+            this.dialogVisible=true
         }
     },
     beforeCreate: function() {
@@ -176,6 +188,7 @@ export default {
     },
     mounted: function() {
         this.getdocumentHeight();
+        this.ready();
     },
     created() {
         let that = this;

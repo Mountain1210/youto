@@ -120,7 +120,7 @@ export default {
   
       }
   }
-  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible'])
+  ,computed:mapGetters(['searchJSON','subsnump','dialogVisible','rightNavArray'])
  ,components:{
       Slide,Search
     }
