@@ -26,7 +26,7 @@ Vue.use(Vuex)
     showLoading:({commit})=>{
         commit(types.SHOW_LOADING)
     },
-    
+
     hideFooter:({commit})=>{
         commit(types.FOOTER_HIDE);
     },
@@ -71,7 +71,7 @@ export default {
             if(document.getElementById("subleftContent").style.width=="100%"){
                 index=document.getElementById("subleftContent").offsetWidth-420;
             }
-            
+
             commit(types.PREVIEW, index)
         },
         isopen: ({
@@ -88,6 +88,7 @@ export default {
         },
         getdocumentLeftHeight() {
             document.getElementById("leftContent").style.height = document.documentElement.clientHeight - 80 + "px";
+            
         },
         handleClose: ({
             commit,
