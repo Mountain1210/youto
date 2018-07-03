@@ -14,7 +14,7 @@ Vue.prototype.$confirm = MessageBox.confirm
 Vue.config.productionTip = false
 require('./assets/css/base.css');
 require('./assets/css/icon.css');
-//require('fixed-data-table/dist/fixed-data-table.css');  
+//require('fixed-data-table/dist/fixed-data-table.css');
 /* eslint-disable no-new */
 import ElementUI from 'element-ui';
 
@@ -43,7 +43,7 @@ axios.interceptors.response.use(function (response) { //配置请求回来的信
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.baseURL='http://localhost:8080/';
 Vue.prototype.$http = axios;
-Vue.prototype.$echarts = echarts; 
+Vue.prototype.$echarts = echarts;
 window.vue = new Vue({
   el: '#app',
   router,
