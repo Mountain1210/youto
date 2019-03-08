@@ -2,7 +2,7 @@
   <div id="app">
   <NavHeader></NavHeader>
   <div id="mainContent">
-   <!-- <NavLeft></NavLeft> -->
+   <!-- <NavLeft>123132</NavLeft> -->
     <router-view/>
     </div>
   </div>
